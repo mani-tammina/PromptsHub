@@ -3,10 +3,11 @@
     "id": 1,
     "role": "Business Analyst",
     "category": "Analysis",
+    "subcategory": "Requirements",
     "name": "Requirement Analysis",
-    "description": "Analyze and clarify business requirements",
-    "tags": ["requirements", "analysis", "ba"],
-    "template": "Analyze the following business requirement and provide clarity on scope, constraints, and deliverables:\n\nRequirement: {{REQUIREMENT}}\n\nPlease provide:\n1. Clear summary of the requirement\n2. Key stakeholders involved\n3. Success criteria\n4. Potential risks and dependencies"
+    "description": "Analyze business requirements and identify gaps",
+    "tags": ["requirements", "analysis", "enterprise"],
+    "template": "# Role / Persona\nAct as a {{ROLE}}.\n\n# Instruction / Task\nAnalyze the provided requirement and identify objectives, scope, assumptions, risks, dependencies, constraints, and gaps.\n\n# Context / Data\n{{REQUIREMENT}}\n\n# Constraints / Output Format\nProvide:\n1. Executive Summary\n2. Business Objectives\n3. Functional Requirements\n4. Non-Functional Requirements\n5. Risks\n6. Recommendations"
   },
   {
     "id": 2,

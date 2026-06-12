@@ -22,7 +22,12 @@ const APP_CONFIG = {
         FAVORITES: 'promptHub_favorites',
         RECENT: 'promptHub_recent',
         THEME: 'promptHub_theme',
-        PROMPTS: 'promptHub_prompts'
+        PROMPTS: 'promptHub_prompts',
+        PROMPTS_SOURCE: 'promptHub_prompts_source'
+    },
+    PROMPT_SOURCES: {
+        FILE: 'file',
+        IMPORT: 'import'
     },
     MAX_RECENT: 10,
     PROMPTS_FILE: 'data/prompts.json'
@@ -53,6 +58,7 @@ const DOM = {
     searchInput: document.getElementById('searchInput'),
     roleFilter: document.getElementById('roleFilter'),
     categoryFilter: document.getElementById('categoryFilter'),
+    subcategoryFilter: document.getElementById('subcategoryFilter'),
     favoritesList: document.getElementById('favoritesList'),
     recentList: document.getElementById('recentList'),
     
@@ -155,6 +161,7 @@ async function initializeApp() {
         console.log('Populating UI filters...');
         populateRoleFilter();
         populateCategoryFilter();
+        populateSubcategoryFilter();
         populatePromptSelect();
         console.log('✓ UI filters populated');
         
@@ -209,21 +216,22 @@ If the error persists, please check the browser console for more details.
  */
 async function loadPrompts() {
     try {
-        // Check if custom prompts are stored in localStorage
         const storedPrompts = localStorage.getItem(APP_CONFIG.STORAGE_KEYS.PROMPTS);
-        if (storedPrompts) {
-            console.log('Loading prompts from localStorage...');
+        const storedSource = localStorage.getItem(APP_CONFIG.STORAGE_KEYS.PROMPTS_SOURCE);
+        const useImportedPrompts = storedSource === APP_CONFIG.PROMPT_SOURCES.IMPORT && storedPrompts;
+
+        if (useImportedPrompts) {
+            console.log('Loading imported prompts from localStorage...');
             appState.allPrompts = JSON.parse(storedPrompts);
-            console.log(`✓ Loaded ${appState.allPrompts.length} prompts from localStorage`);
+            console.log(`✓ Loaded ${appState.allPrompts.length} imported prompts from localStorage`);
         } else {
-            // Load from file
             console.log(`Loading prompts from ${APP_CONFIG.PROMPTS_FILE}...`);
             console.log(`Current URL: ${window.location.href}`);
-            
-            const response = await fetch(APP_CONFIG.PROMPTS_FILE);
-            
-            if (!response.ok) {
-                const errorDetails = `
+
+            try {
+                const response = await fetch(APP_CONFIG.PROMPTS_FILE);
+                if (!response.ok) {
+                    const errorDetails = `
 HTTP ${response.status}: ${response.statusText}
 
 Troubleshooting:
@@ -238,38 +246,47 @@ To run a local server:
   VS Code: Install Live Server extension
 
 Then open: http://localhost:8000 in browser
-                `.trim();
-                throw new Error(errorDetails);
-            }
-            
-            let data;
-            try {
-                data = await response.json();
-            } catch (parseError) {
-                throw new Error(`Invalid JSON format in data/prompts.json: ${parseError.message}`);
-            }
-            
-            if (!Array.isArray(data)) {
-                throw new Error('Invalid prompts.json: Expected an array, got ' + typeof data);
-            }
-            
-            if (data.length === 0) {
-                console.warn('⚠ Warning: data/prompts.json is empty');
-                appState.allPrompts = getDefaultPrompts();
-                console.log(`✓ Loaded ${appState.allPrompts.length} default prompts`);
-            } else {
-                appState.allPrompts = data;
-                console.log(`✓ Loaded ${appState.allPrompts.length} prompts from file`);
-                validatePromptsStructure(appState.allPrompts);
+                    `.trim();
+                    throw new Error(errorDetails);
+                }
+
+                let data;
+                try {
+                    data = await response.json();
+                } catch (parseError) {
+                    throw new Error(`Invalid JSON format in data/prompts.json: ${parseError.message}`);
+                }
+
+                if (!Array.isArray(data)) {
+                    throw new Error('Invalid prompts.json: Expected an array, got ' + typeof data);
+                }
+
+                if (data.length === 0) {
+                    console.warn('⚠ Warning: data/prompts.json is empty');
+                    appState.allPrompts = getDefaultPrompts();
+                    console.log(`✓ Loaded ${appState.allPrompts.length} default prompts`);
+                } else {
+                    appState.allPrompts = data;
+                    console.log(`✓ Loaded ${appState.allPrompts.length} prompts from file`);
+                    validatePromptsStructure(appState.allPrompts);
+                }
+            } catch (fileError) {
+                if (storedPrompts) {
+                    console.warn('⚠ Failed to fetch data/prompts.json, falling back to stored prompts:', fileError.message);
+                    appState.allPrompts = JSON.parse(storedPrompts);
+                    console.log(`✓ Loaded ${appState.allPrompts.length} prompts from localStorage fallback`);
+                } else {
+                    throw fileError;
+                }
             }
         }
-        
+
         appState.filteredPrompts = [...appState.allPrompts];
-        
+
         if (appState.allPrompts.length === 0) {
             throw new Error('No prompts available to load');
         }
-        
+
         console.log(`✓ All prompts loaded successfully (${appState.allPrompts.length} total)`);
     } catch (error) {
         const errorMessage = error.message || String(error);
@@ -302,6 +319,9 @@ function validatePromptsStructure(prompts) {
         }
         if (prompt.tags && !Array.isArray(prompt.tags)) {
             console.warn(`⚠ Prompt ${index}: tags should be an array, got ${typeof prompt.tags}`);
+        }
+        if ('subcategory' in prompt && prompt.subcategory && typeof prompt.subcategory !== 'string') {
+            console.warn(`⚠ Prompt ${index}: subcategory should be a string, got ${typeof prompt.subcategory}`);
         }
     });
     
@@ -424,8 +444,11 @@ function toggleTheme() {
  * Get unique values from prompts
  */
 function getUniqueValues(key) {
-    const values = appState.allPrompts.map(p => p[key]);
-    return [...new Set(values)].sort();
+    const values = appState.allPrompts
+        .map(p => p[key])
+        .filter(value => value !== undefined && value !== null && value !== '')
+        .sort();
+    return [...new Set(values)];
 }
 
 /**
@@ -457,6 +480,21 @@ function populateCategoryFilter() {
 }
 
 /**
+ * Populate subcategory filter dropdown
+ */
+function populateSubcategoryFilter() {
+    const subcategories = getUniqueValues('subcategory');
+    DOM.subcategoryFilter.innerHTML = '<option value="">All Subcategories</option>';
+    subcategories.forEach(subcategory => {
+        if (!subcategory) return;
+        const option = document.createElement('option');
+        option.value = subcategory;
+        option.textContent = subcategory;
+        DOM.subcategoryFilter.appendChild(option);
+    });
+}
+
+/**
  * Populate prompt select dropdown
  */
 function populatePromptSelect() {
@@ -484,8 +522,18 @@ function displayPromptDetails(promptId) {
     
     appState.selectedPrompt = prompt;
     
-    // Display description
-    DOM.promptDescription.innerHTML = `<p>${escapeHtml(prompt.description)}</p>`;
+    // Display metadata and description
+    const metadata = [];
+    metadata.push(`<strong>Role:</strong> ${escapeHtml(prompt.role)}`);
+    metadata.push(`<strong>Category:</strong> ${escapeHtml(prompt.category)}`);
+    if (prompt.subcategory) {
+        metadata.push(`<strong>Subcategory:</strong> ${escapeHtml(prompt.subcategory)}`);
+    }
+    
+    DOM.promptDescription.innerHTML = `
+        <div class="prompt-meta">${metadata.join(' · ')}</div>
+        <p>${escapeHtml(prompt.description)}</p>
+    `;
     
     // Display tags
     DOM.tagsContainer.innerHTML = prompt.tags
@@ -573,17 +621,19 @@ function updateRecentList() {
 function applyFilters() {
     const role = DOM.roleFilter.value;
     const category = DOM.categoryFilter.value;
+    const subcategory = DOM.subcategoryFilter.value;
     const search = DOM.searchInput.value.toLowerCase().trim();
     
     appState.filteredPrompts = appState.allPrompts.filter(prompt => {
         const roleMatch = !role || prompt.role === role;
         const categoryMatch = !category || prompt.category === category;
+        const subcategoryMatch = !subcategory || prompt.subcategory === subcategory;
         const searchMatch = !search || 
             prompt.name.toLowerCase().includes(search) ||
             prompt.description.toLowerCase().includes(search) ||
             prompt.tags.some(tag => tag.toLowerCase().includes(search));
         
-        return roleMatch && categoryMatch && searchMatch;
+        return roleMatch && categoryMatch && subcategoryMatch && searchMatch;
     });
     
     // Reset selection and repopulate dropdown
@@ -613,6 +663,9 @@ function generatePrompt() {
     
     let generatedPrompt = appState.selectedPrompt.template;
     generatedPrompt = generatedPrompt.replace(/{{REQUIREMENT}}/g, requirement);
+    generatedPrompt = generatedPrompt.replace(/{{ROLE}}/g, appState.selectedPrompt.role || '');
+    generatedPrompt = generatedPrompt.replace(/{{CATEGORY}}/g, appState.selectedPrompt.category || '');
+    generatedPrompt = generatedPrompt.replace(/{{SUBCATEGORY}}/g, appState.selectedPrompt.subcategory || '');
     
     // Display generated prompt
     DOM.generatedPromptOutput.textContent = generatedPrompt;
@@ -712,14 +765,16 @@ async function handleFileUpload(event) {
         
         validatePromptsStructure(prompts);
         
-        // Update state and save to localStorage
+        // Update state and save to localStorage as imported prompts
         appState.allPrompts = prompts;
         appState.filteredPrompts = [...prompts];
         localStorage.setItem(APP_CONFIG.STORAGE_KEYS.PROMPTS, JSON.stringify(prompts));
+        localStorage.setItem(APP_CONFIG.STORAGE_KEYS.PROMPTS_SOURCE, APP_CONFIG.PROMPT_SOURCES.IMPORT);
         
         // Refresh UI
         populateRoleFilter();
         populateCategoryFilter();
+        populateSubcategoryFilter();
         populatePromptSelect();
         
         showSuccess(`Imported ${prompts.length} prompts successfully`);
@@ -751,6 +806,7 @@ function setupEventListeners() {
     DOM.searchInput.addEventListener('input', applyFilters);
     DOM.roleFilter.addEventListener('change', applyFilters);
     DOM.categoryFilter.addEventListener('change', applyFilters);
+    DOM.subcategoryFilter.addEventListener('change', applyFilters);
     
     // Main Content
     DOM.promptSelect.addEventListener('change', (e) => {

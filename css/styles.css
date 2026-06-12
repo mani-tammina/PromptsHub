@@ -484,6 +484,19 @@ body.dark-mode .form-select {
     margin: 0;
 }
 
+.prompt-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+.prompt-meta strong {
+    color: var(--color-text-primary);
+}
+
 .text-muted {
     color: var(--color-text-muted);
 }
