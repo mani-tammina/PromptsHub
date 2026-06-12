@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "role": "Business Analyst",
+    "category": "Analysis",
+    "name": "Requirement Analysis",
+    "description": "Analyze and clarify business requirements",
+    "tags": ["requirements", "analysis", "ba"],
+    "template": "Analyze the following business requirement and provide clarity on scope, constraints, and deliverables:\n\nRequirement: {{REQUIREMENT}}\n\nPlease provide:\n1. Clear summary of the requirement\n2. Key stakeholders involved\n3. Success criteria\n4. Potential risks and dependencies"
+  },
+  {
+    "id": 2,
+    "role": "Business Analyst",
+    "category": "Analysis",
+    "name": "Process Flow Analysis",
+    "description": "Analyze and map business processes",
+    "tags": ["process", "flow", "mapping"],
+    "template": "Create a detailed process flow analysis for:\n\nProcess: {{REQUIREMENT}}\n\nInclude:\n1. Current state process steps\n2. Bottlenecks and pain points\n3. Improvement opportunities\n4. Future state recommendations"
+  },
+  {
+    "id": 3,
+    "role": "Business Analyst",
+    "category": "Documentation",
+    "name": "Requirements Document",
+    "description": "Generate formal requirements documentation",
+    "tags": ["requirements", "documentation", "formal"],
+    "template": "Create a formal requirements specification for:\n\n{{REQUIREMENT}}\n\nDocument structure:\n1. Executive Summary\n2. Business Requirements\n3. Functional Requirements\n4. Non-Functional Requirements\n5. Acceptance Criteria\n6. Dependencies and Assumptions"
+  },
+  {
+    "id": 4,
+    "role": "Solution Architect",
+    "category": "Architecture",
+    "name": "System Architecture Design",
+    "description": "Design high-level system architecture",
+    "tags": ["architecture", "design", "system"],
+    "template": "Design a system architecture for:\n\nSystem: {{REQUIREMENT}}\n\nProvide:\n1. Architecture diagram description\n2. Core components and their responsibilities\n3. Integration points\n4. Scalability and performance considerations\n5. Security architecture\n6. Disaster recovery approach"
+  },
+  {
+    "id": 5,
+    "role": "Solution Architect",
+    "category": "Architecture",
+    "name": "Technology Stack Selection",
+    "description": "Recommend technology stack for a solution",
+    "tags": ["technology", "stack", "recommendation"],
+    "template": "Recommend a technology stack for the following solution:\n\nProject: {{REQUIREMENT}}\n\nEvaluate and recommend:\n1. Backend framework/runtime\n2. Frontend framework\n3. Database solutions\n4. Infrastructure and cloud platform\n5. DevOps and CI/CD tools\n6. Monitoring and logging solutions\n7. Justification for each choice"
+  },
+  {
+    "id": 6,
+    "role": "Solution Architect",
+    "category": "Security",
+    "name": "Security Architecture Review",
+    "description": "Review and design security architecture",
+    "tags": ["security", "architecture", "review"],
+    "template": "Review the security architecture for:\n\nSystem: {{REQUIREMENT}}\n\nAnalyze:\n1. Authentication mechanisms\n2. Authorization and access control\n3. Data encryption (in transit and at rest)\n4. Vulnerability assessment\n5. Compliance requirements\n6. Security testing strategy\n7. Incident response plan"
+  },
+  {
+    "id": 7,
+    "role": "Developer",
+    "category": "Development",
+    "name": "API Design",
+    "description": "Design RESTful API endpoints",
+    "tags": ["api", "rest", "design"],
+    "template": "Design a RESTful API for:\n\nFeature: {{REQUIREMENT}}\n\nSpecify:\n1. Endpoint paths and HTTP methods\n2. Request/response schemas\n3. Error handling and status codes\n4. Authentication/authorization\n5. Rate limiting strategy\n6. Versioning approach\n7. API documentation format"
+  },
+  {
+    "id": 8,
+    "role": "Developer",
+    "category": "Development",
+    "name": "Code Review Checklist",
+    "description": "Generate code review checklist",
+    "tags": ["code", "review", "checklist"],
+    "template": "Create a code review checklist for:\n\nCode/Feature: {{REQUIREMENT}}\n\nReview criteria:\n1. Code quality and style\n2. Performance optimization\n3. Error handling\n4. Testing coverage\n5. Security considerations\n6. Documentation\n7. Backward compatibility\n8. Best practices alignment"
+  },
+  {
+    "id": 9,
+    "role": "Developer",
+    "category": "Development",
+    "name": "Algorithm Implementation",
+    "description": "Implement algorithm solution",
+    "tags": ["algorithm", "implementation", "coding"],
+    "template": "Implement a solution for the following algorithm problem:\n\nProblem: {{REQUIREMENT}}\n\nProvide:\n1. Problem analysis and examples\n2. Algorithm explanation\n3. Pseudo-code\n4. Full implementation code\n5. Time and space complexity analysis\n6. Edge cases handling\n7. Test cases"
+  },
+  {
+    "id": 10,
+    "role": "Developer",
+    "category": "Documentation",
+    "name": "Code Documentation",
+    "description": "Generate comprehensive code documentation",
+    "tags": ["documentation", "code", "comments"],
+    "template": "Create comprehensive documentation for:\n\nCode Module: {{REQUIREMENT}}\n\nInclude:\n1. Module overview and purpose\n2. Function/method descriptions\n3. Parameters and return values\n4. Usage examples\n5. Dependencies\n6. Performance considerations\n7. Known limitations"
+  },
+  {
+    "id": 11,
+    "role": "Mobile Developer",
+    "category": "Development",
+    "name": "Mobile App Feature Design",
+    "description": "Design mobile application features",
+    "tags": ["mobile", "app", "design"],
+    "template": "Design a mobile app feature for:\n\nFeature: {{REQUIREMENT}}\n\nProvide:\n1. User journey and wireflows\n2. UI/UX specifications\n3. Platform-specific considerations (iOS/Android)\n4. Performance optimization\n5. Offline functionality\n6. Testing strategy\n7. Analytics tracking plan"
+  },
+  {
+    "id": 12,
+    "role": "Mobile Developer",
+    "category": "Development",
+    "name": "Mobile API Integration",
+    "description": "Design mobile API integration strategy",
+    "tags": ["mobile", "api", "integration"],
+    "template": "Design API integration for mobile app:\n\nIntegration: {{REQUIREMENT}}\n\nAddress:\n1. Authentication handling\n2. Network resilience\n3. Data caching strategy\n4. Offline support\n5. Error handling\n6. Security measures\n7. Performance optimization (battery, data usage)"
+  },
+  {
+    "id": 13,
+    "role": "QA Engineer",
+    "category": "Testing",
+    "name": "Test Plan Creation",
+    "description": "Create comprehensive test plan",
+    "tags": ["testing", "plan", "qa"],
+    "template": "Create a test plan for:\n\nFeature/System: {{REQUIREMENT}}\n\nInclude:\n1. Testing scope and objectives\n2. Test types (unit, integration, system, acceptance)\n3. Test environment requirements\n4. Testing schedule and resources\n5. Entry and exit criteria\n6. Risk assessment\n7. Deliverables"
+  },
+  {
+    "id": 14,
+    "role": "QA Engineer",
+    "category": "Testing",
+    "name": "Test Case Generation",
+    "description": "Generate test cases for requirements",
+    "tags": ["testing", "testcases", "qa"],
+    "template": "Generate test cases for:\n\nRequirement: {{REQUIREMENT}}\n\nProvide:\n1. Positive test scenarios\n2. Negative test scenarios\n3. Edge case scenarios\n4. Performance test cases\n5. Security test cases\n6. Detailed test steps\n7. Expected results\n8. Test data requirements"
+  },
+  {
+    "id": 15,
+    "role": "QA Engineer",
+    "category": "Testing",
+    "name": "Automation Test Strategy",
+    "description": "Design test automation strategy",
+    "tags": ["automation", "testing", "strategy"],
+    "template": "Design test automation strategy for:\n\nApplication: {{REQUIREMENT}}\n\nDefine:\n1. Automation scope and priorities\n2. Test automation framework selection\n3. Tool recommendations\n4. Test automation architecture\n5. Maintenance strategy\n6. CI/CD integration\n7. ROI analysis"
+  },
+  {
+    "id": 16,
+    "role": "Project Manager",
+    "category": "Project Management",
+    "name": "Project Plan",
+    "description": "Create project management plan",
+    "tags": ["project", "plan", "management"],
+    "template": "Create a project plan for:\n\nProject: {{REQUIREMENT}}\n\nInclude:\n1. Project scope and objectives\n2. Work breakdown structure (WBS)\n3. Timeline and milestones\n4. Resource allocation\n5. Risk management plan\n6. Communication plan\n7. Quality assurance approach\n8. Budget estimation"
+  },
+  {
+    "id": 17,
+    "role": "Project Manager",
+    "category": "Project Management",
+    "name": "Risk Management Plan",
+    "description": "Develop risk management strategy",
+    "tags": ["risk", "management", "planning"],
+    "template": "Develop a risk management plan for:\n\nProject/Initiative: {{REQUIREMENT}}\n\nAddress:\n1. Risk identification\n2. Risk analysis (probability and impact)\n3. Risk prioritization\n4. Mitigation strategies\n5. Contingency plans\n6. Risk monitoring approach\n7. Escalation procedures"
+  },
+  {
+    "id": 18,
+    "role": "Project Manager",
+    "category": "Documentation",
+    "name": "Stakeholder Communication Plan",
+    "description": "Create stakeholder communication plan",
+    "tags": ["stakeholders", "communication", "plan"],
+    "template": "Create a stakeholder communication plan for:\n\nProject: {{REQUIREMENT}}\n\nDefine:\n1. Stakeholder identification and analysis\n2. Communication objectives\n3. Key messages\n4. Communication channels\n5. Frequency and schedule\n6. Responsible parties\n7. Feedback mechanisms"
+  },
+  {
+    "id": 19,
+    "role": "DevOps Engineer",
+    "category": "DevOps",
+    "name": "CI/CD Pipeline Design",
+    "description": "Design continuous integration/deployment pipeline",
+    "tags": ["cicd", "devops", "pipeline"],
+    "template": "Design a CI/CD pipeline for:\n\nApplication: {{REQUIREMENT}}\n\nSpecify:\n1. Build automation strategy\n2. Testing stages in pipeline\n3. Deployment strategy\n4. Environment management\n5. Monitoring and alerting\n6. Rollback procedures\n7. Infrastructure as Code approach"
+  },
+  {
+    "id": 20,
+    "role": "DevOps Engineer",
+    "category": "DevOps",
+    "name": "Infrastructure Architecture",
+    "description": "Design infrastructure architecture",
+    "tags": ["infrastructure", "devops", "architecture"],
+    "template": "Design infrastructure for:\n\nApplication: {{REQUIREMENT}}\n\nInclude:\n1. Cloud provider selection\n2. Compute resources (VMs, containers, serverless)\n3. Network architecture\n4. Storage solutions\n5. Load balancing strategy\n6. Auto-scaling configuration\n7. Disaster recovery setup"
+  },
+  {
+    "id": 21,
+    "role": "DevOps Engineer",
+    "category": "DevOps",
+    "name": "Monitoring & Observability",
+    "description": "Design monitoring and observability strategy",
+    "tags": ["monitoring", "observability", "devops"],
+    "template": "Design monitoring and observability for:\n\nSystem: {{REQUIREMENT}}\n\nAddress:\n1. Metrics collection strategy\n2. Log aggregation\n3. Distributed tracing\n4. Alerting strategy\n5. Dashboards and visualization\n6. SLA/SLO definitions\n7. Incident response process"
+  },
+  {
+    "id": 22,
+    "role": "UI/UX Designer",
+    "category": "Development",
+    "name": "UI/UX Design Specification",
+    "description": "Create UI/UX design specifications",
+    "tags": ["uiux", "design", "specification"],
+    "template": "Create UI/UX design specifications for:\n\nFeature/Product: {{REQUIREMENT}}\n\nInclude:\n1. User personas and journey\n2. Wireframes description\n3. Visual design guidelines\n4. Component specifications\n5. Interaction patterns\n6. Accessibility requirements\n7. Responsive design approach"
+  },
+  {
+    "id": 23,
+    "role": "UI/UX Designer",
+    "category": "Documentation",
+    "name": "Design System Documentation",
+    "description": "Document design system components",
+    "tags": ["design", "system", "documentation"],
+    "template": "Create design system documentation for:\n\nComponent/Pattern: {{REQUIREMENT}}\n\nDocument:\n1. Component purpose and usage\n2. Visual specifications\n3. Interaction states\n4. Code examples\n5. Accessibility compliance\n6. Do's and don'ts\n7. Related components"
+  },
+  {
+    "id": 24,
+    "role": "Presales Consultant",
+    "category": "Presales",
+    "name": "Solution Proposal",
+    "description": "Create client solution proposal",
+    "tags": ["presales", "proposal", "solution"],
+    "template": "Create a solution proposal for:\n\nClient Requirement: {{REQUIREMENT}}\n\nInclude:\n1. Executive summary\n2. Problem statement\n3. Proposed solution overview\n4. Implementation approach\n5. Timeline and milestones\n6. Investment and ROI\n7. Success criteria\n8. Appendices (tech specs, references)"
+  },
+  {
+    "id": 25,
+    "role": "Presales Consultant",
+    "category": "Presales",
+    "name": "Discovery Questions",
+    "description": "Generate discovery questions for prospects",
+    "tags": ["presales", "discovery", "qualification"],
+    "template": "Generate discovery questions for:\n\nBusiness Context: {{REQUIREMENT}}\n\nCreate questions that uncover:\n1. Business objectives and challenges\n2. Current state and pain points\n3. Success metrics and desired outcomes\n4. Timeline and budget\n5. Stakeholders and decision makers\n6. Technical requirements\n7. Integration needs"
+  },
+  {
+    "id": 26,
+    "role": "Presales Consultant",
+    "category": "Documentation",
+    "name": "ROI Analysis",
+    "description": "Analyze return on investment",
+    "tags": ["presales", "roi", "analysis"],
+    "template": "Conduct ROI analysis for:\n\nInitiative/Solution: {{REQUIREMENT}}\n\nAnalyze:\n1. Investment required (capital and operational)\n2. Cost savings and revenue benefits\n3. Payback period calculation\n4. Financial projections (3-5 years)\n5. Risk factors and assumptions\n6. Comparison with alternatives\n7. Executive summary"
+  },
+  {
+    "id": 27,
+    "role": "Product Manager",
+    "category": "Documentation",
+    "name": "Product Requirements Document (PRD)",
+    "description": "Create product requirements document",
+    "tags": ["product", "prd", "requirements"],
+    "template": "Create a Product Requirements Document for:\n\nProduct/Feature: {{REQUIREMENT}}\n\nInclude:\n1. Product vision and goals\n2. Target users and personas\n3. Problem statement\n4. Feature requirements\n5. Success metrics and KPIs\n6. Roadmap and priorities\n7. Technical constraints\n8. Launch strategy"
+  },
+  {
+    "id": 28,
+    "role": "Product Manager",
+    "category": "Analysis",
+    "name": "Competitive Analysis",
+    "description": "Conduct competitive market analysis",
+    "tags": ["product", "competition", "analysis"],
+    "template": "Conduct competitive analysis for:\n\nProduct/Market: {{REQUIREMENT}}\n\nAnalyze:\n1. Direct and indirect competitors\n2. Competitor features and positioning\n3. Pricing strategy comparison\n4. Market gaps and opportunities\n5. Differentiation strategy\n6. Threat assessment\n7. Strategic recommendations"
+  },
+  {
+    "id": 29,
+    "role": "Product Manager",
+    "category": "Project Management",
+    "name": "Feature Prioritization Matrix",
+    "description": "Create feature prioritization matrix",
+    "tags": ["product", "prioritization", "roadmap"],
+    "template": "Create a feature prioritization matrix for:\n\nProduct Features: {{REQUIREMENT}}\n\nEvaluate features based on:\n1. User impact and value\n2. Business impact and ROI\n3. Implementation complexity\n4. Technical risk\n5. Dependencies\n6. Resource availability\n7. Strategic alignment"
+  },
+  {
+    "id": 30,
+    "role": "Developer",
+    "category": "Development",
+    "name": "Bug Report Template",
+    "description": "Create standardized bug report template",
+    "tags": ["bug", "report", "template"],
+    "template": "Analyze and document the following issue:\n\nIssue: {{REQUIREMENT}}\n\nProvide in bug report format:\n1. Title and severity level\n2. Detailed description\n3. Steps to reproduce\n4. Expected vs actual behavior\n5. Environment details\n6. Screenshots/logs\n7. Impact analysis\n8. Suggested fix (if applicable)"
+  }
+]

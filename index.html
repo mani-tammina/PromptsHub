@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prompt Hub - Enterprise Prompt Library">
+    <title>Prompt Hub - AI Prompt Library</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!--
+        IMPORTANT: This application must be served via HTTP/HTTPS, not via file:// protocol.
+        
+        To run locally, use one of these commands:
+        
+        Python 3:
+            python -m http.server 8000
+        
+        Python 2:
+            python -m SimpleHTTPServer 8000
+        
+        Node.js (requires npm install -g http-server):
+            npx http-server
+        
+        VS Code:
+            Install "Live Server" extension, then right-click index.html > Open with Live Server
+        
+        Then open: http://localhost:8000 (or the port shown in terminal)
+        
+        If you get a "Failed to load application" error, check browser console (F12)
+        for detailed diagnostic information.
+    -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <span class="logo">⚡</span>
+                <h1 class="app-title">Prompt Hub</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="btn-icon upload-btn" title="Import prompts" aria-label="Import prompts">
+                    <span>📥</span>
+                </button>
+                <button class="btn-secondary export-btn" title="Export prompts">
+                    <span>📤</span> Export
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Search -->
+                <div class="search-section">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Search prompts..."
+                        aria-label="Search prompts"
+                    >
+                </div>
+
+                <!-- Role Filter -->
+                <div class="filter-section">
+                    <h3 class="section-title">Role</h3>
+                    <select id="roleFilter" class="filter-select" aria-label="Filter by role">
+                        <option value="">All Roles</option>
+                    </select>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="filter-section">
+                    <h3 class="section-title">Category</h3>
+                    <select id="categoryFilter" class="filter-select" aria-label="Filter by category">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+
+                <!-- Favorites Section -->
+                <div class="filter-section">
+                    <h3 class="section-title">Favorites</h3>
+                    <div id="favoritesList" class="favorites-list">
+                        <p class="empty-message">No favorites yet</p>
+                    </div>
+                </div>
+
+                <!-- Recent Prompts Section -->
+                <div class="filter-section">
+                    <h3 class="section-title">Recent</h3>
+                    <div id="recentList" class="recent-list">
+                        <p class="empty-message">No recent prompts</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Prompt Selection Card -->
+                <div class="card">
+                    <h2 class="card-title">Select Prompt</h2>
+                    
+                    <div class="form-group">
+                        <label for="promptSelect" class="form-label">Prompt:</label>
+                        <select id="promptSelect" class="form-select" aria-label="Select a prompt">
+                            <option value="">Choose a prompt...</option>
+                        </select>
+                    </div>
+
+                    <!-- Prompt Description -->
+                    <div id="promptDescription" class="prompt-description">
+                        <p class="text-muted">Select a prompt to see details</p>
+                    </div>
+
+                    <!-- Tags Display -->
+                    <div id="tagsContainer" class="tags-container"></div>
+
+                    <!-- Requirement Input -->
+                    <div class="form-group">
+                        <label for="requirementInput" class="form-label">Requirement / Input:</label>
+                        <textarea 
+                            id="requirementInput" 
+                            class="form-textarea" 
+                            placeholder="Enter your requirement or input to replace {{REQUIREMENT}} placeholders"
+                            rows="4"
+                            aria-label="Enter requirement"
+                        ></textarea>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <button id="generateBtn" class="btn-primary" aria-label="Generate prompt">
+                        Generate Prompt
+                    </button>
+                </div>
+
+                <!-- Generated Prompt Card -->
+                <div class="card">
+                    <h2 class="card-title">Generated Prompt</h2>
+                    
+                    <div id="generatedPromptSection" class="generated-prompt-section" style="display: none;">
+                        <div id="generatedPromptOutput" class="prompt-output"></div>
+                        
+                        <div class="button-group">
+                            <button id="copyBtn" class="btn-primary" aria-label="Copy prompt to clipboard">
+                                📋 Copy to Clipboard
+                            </button>
+                            <button id="clearBtn" class="btn-secondary" aria-label="Clear form">
+                                Clear
+                            </button>
+                        </div>
+
+                        <div id="copyNotification" class="notification" style="display: none;">
+                            ✓ Copied to clipboard!
+                        </div>
+                    </div>
+
+                    <div id="emptyPromptMessage" class="empty-message">
+                        Generate a prompt to see the output here
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Hidden File Input for Import -->
+    <input 
+        type="file" 
+        id="fileInput" 
+        accept=".json" 
+        style="display: none;" 
+        aria-label="Import JSON file"
+    >
+
+    <!-- Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

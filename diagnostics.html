@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Hub - Diagnostics & Setup Verification</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { color: #2563eb; margin: 20px 0 10px; }
+        h2 { color: #1e40af; margin: 30px 0 15px; font-size: 18px; }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test {
+            padding: 12px;
+            margin: 10px 0;
+            border-left: 4px solid #ddd;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+        .test.pass { border-color: #10b981; background: #f0fdf4; }
+        .test.fail { border-color: #ef4444; background: #fef2f2; }
+        .test.warn { border-color: #f59e0b; background: #fffbeb; }
+        .icon { margin-right: 8px; font-weight: bold; }
+        .pass .icon { color: #10b981; }
+        .fail .icon { color: #ef4444; }
+        .warn .icon { color: #f59e0b; }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #1d4ed8; }
+        .action-section { margin: 20px 0; }
+        .info-box {
+            background: #e0f2fe;
+            border-left: 4px solid #0284c7;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Prompt Hub - Diagnostics & Setup Verification</h1>
+        
+        <div class="card">
+            <h2>🔍 System Diagnostics</h2>
+            <div id="diagnostics"></div>
+        </div>
+
+        <div class="card">
+            <h2>🧪 File Verification</h2>
+            <div id="fileTests"></div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Environment Information</h2>
+            <div id="environment"></div>
+        </div>
+
+        <div class="card">
+            <h2>🚀 Quick Setup</h2>
+            <div class="action-section">
+                <p><strong>Choose your setup method:</strong></p>
+                <button onclick="copyCommand('python')">Copy Python Command</button>
+                <button onclick="copyCommand('node')">Copy Node.js Command</button>
+                <button onclick="copyCommand('all')">Show All Options</button>
+            </div>
+            <div id="setupGuide"></div>
+        </div>
+
+        <div class="card">
+            <h2>✅ Troubleshooting Checklist</h2>
+            <div id="checklist"></div>
+        </div>
+    </div>
+
+    <script>
+        // Run diagnostics on page load
+        window.addEventListener('load', runDiagnostics);
+
+        function runDiagnostics() {
+            performSystemDiagnostics();
+            performFileTests();
+            displayEnvironmentInfo();
+            displaySetupGuide();
+            displayChecklist();
+        }
+
+        function performSystemDiagnostics() {
+            const diagnostics = document.getElementById('diagnostics');
+            const results = [];
+
+            // Browser check
+            const browserName = getBrowserName();
+            results.push({
+                test: `Browser: ${browserName}`,
+                pass: true,
+                message: 'Supported browser detected'
+            });
+
+            // localStorage check
+            try {
+                localStorage.setItem('test', 'value');
+                localStorage.removeItem('test');
+                results.push({
+                    test: 'localStorage Support',
+                    pass: true,
+                    message: 'localStorage is available'
+                });
+            } catch (e) {
+                results.push({
+                    test: 'localStorage Support',
+                    pass: false,
+                    message: 'localStorage is disabled or unavailable'
+                });
+            }
+
+            // Fetch API check
+            results.push({
+                test: 'Fetch API',
+                pass: typeof fetch !== 'undefined',
+                message: typeof fetch !== 'undefined' ? 'Fetch API is available' : 'Fetch API not available'
+            });
+
+            // Protocol check
+            const isHttps = window.location.protocol === 'https:';
+            const isHttp = window.location.protocol === 'http:';
+            const isFile = window.location.protocol === 'file:';
+            
+            results.push({
+                test: 'Server Protocol',
+                pass: isHttp || isHttps,
+                warn: isFile,
+                message: isFile 
+                    ? 'Using file:// protocol - must use HTTP server for app to work'
+                    : isHttp 
+                    ? 'Using HTTP protocol ✓'
+                    : 'Using HTTPS protocol ✓'
+            });
+
+            // Display results
+            diagnostics.innerHTML = results.map(r => `
+                <div class="test ${r.warn ? 'warn' : r.pass ? 'pass' : 'fail'}">
+                    <span class="icon">${r.warn ? '⚠' : r.pass ? '✓' : '✗'}</span>
+                    <strong>${r.test}:</strong> ${r.message}
+                </div>
+            `).join('');
+        }
+
+        function performFileTests() {
+            const fileTests = document.getElementById('fileTests');
+            const filesToCheck = [
+                { path: 'index.html', description: 'Main application file' },
+                { path: 'css/styles.css', description: 'Stylesheet' },
+                { path: 'js/app.js', description: 'Application logic' },
+                { path: 'data/prompts.json', description: 'Prompt repository' }
+            ];
+
+            let results = [];
+
+            Promise.all(filesToCheck.map(file =>
+                fetch(file.path)
+                    .then(r => ({
+                        file: file.path,
+                        desc: file.description,
+                        exists: r.ok,
+                        status: r.status
+                    }))
+                    .catch(e => ({
+                        file: file.path,
+                        desc: file.description,
+                        exists: false,
+                        error: e.message
+                    }))
+            )).then(fileResults => {
+                fileResults.forEach(result => {
+                    results.push({
+                        test: `${result.file} (${result.desc})`,
+                        pass: result.exists,
+                        message: result.exists 
+                            ? `File found (HTTP ${result.status})`
+                            : `File not found or inaccessible`
+                    });
+                });
+
+                fileTests.innerHTML = results.map(r => `
+                    <div class="test ${r.pass ? 'pass' : 'fail'}">
+                        <span class="icon">${r.pass ? '✓' : '✗'}</span>
+                        <strong>${r.test}:</strong> ${r.message}
+                    </div>
+                `).join('');
+            });
+        }
+
+        function displayEnvironmentInfo() {
+            const env = document.getElementById('environment');
+            const info = {
+                'Current URL': window.location.href,
+                'Protocol': window.location.protocol,
+                'Browser': getBrowserName(),
+                'User Agent': navigator.userAgent.substring(0, 60) + '...',
+                'localStorage Available': typeof localStorage !== 'undefined',
+                'Fetch API Available': typeof fetch !== 'undefined',
+                'Screen Resolution': `${window.screen.width}x${window.screen.height}`
+            };
+
+            env.innerHTML = '<pre>' + Object.entries(info)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join('\n') + '</pre>';
+        }
+
+        function displaySetupGuide() {
+            const guide = document.getElementById('setupGuide');
+            guide.innerHTML = `
+                <div class="info-box">
+                    <strong>Important:</strong> This application must run on HTTP/HTTPS, not file:// protocol.
+                </div>
+
+                <h3>Option 1: Python (Recommended)</h3>
+                <pre>cd /path/to/PromptHub
+python -m http.server 8000</pre>
+
+                <h3>Option 2: Node.js</h3>
+                <pre>cd /path/to/PromptHub
+npx http-server</pre>
+
+                <h3>Option 3: VS Code Live Server</h3>
+                <ol>
+                    <li>Install "Live Server" extension in VS Code</li>
+                    <li>Right-click index.html</li>
+                    <li>Select "Open with Live Server"</li>
+                </ol>
+
+                <p style="margin-top: 15px;"><strong>After starting server:</strong></p>
+                <p>Open <code>http://localhost:8000</code> (or :8080 for Node.js) in your browser</p>
+            `;
+        }
+
+        function displayChecklist() {
+            const checklist = document.getElementById('checklist');
+            const items = [
+                '✓ Project files exist: index.html, css/styles.css, js/app.js, data/prompts.json',
+                '✓ Using HTTP/HTTPS server (not file:// protocol)',
+                '✓ Browser supports ES6 JavaScript and Fetch API',
+                '✓ localStorage is enabled in browser',
+                '✓ data/prompts.json contains valid JSON array',
+                '✓ Browser console shows no errors (F12 → Console)',
+                '✓ Tried clearing browser cache (Ctrl+Shift+Delete)',
+                '✓ Verified correct file paths relative to project root'
+            ];
+
+            checklist.innerHTML = '<ul>' + items
+                .map(item => `<li style="margin: 10px 0; list-style-position: inside;">${item}</li>`)
+                .join('') + '</ul>';
+        }
+
+        function getBrowserName() {
+            const ua = navigator.userAgent;
+            if (ua.indexOf('Chrome') > -1 && ua.indexOf('Chromium') === -1) return 'Chrome';
+            if (ua.indexOf('Safari') > -1 && ua.indexOf('Chrome') === -1) return 'Safari';
+            if (ua.indexOf('Firefox') > -1) return 'Firefox';
+            if (ua.indexOf('Edge') > -1 || ua.indexOf('Edg') > -1) return 'Edge';
+            return 'Unknown';
+        }
+
+        function copyCommand(type) {
+            const commands = {
+                python: 'python -m http.server 8000',
+                node: 'npx http-server',
+                all: 'Python: python -m http.server 8000\nNode: npx http-server'
+            };
+            
+            const text = commands[type] || commands.all;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
