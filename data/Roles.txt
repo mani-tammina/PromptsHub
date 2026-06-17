@@ -1,0 +1,12 @@
+Business Analyst      1-50
+Product Manager       51-100
+Solution Architect    101-150
+Software Architect    151-200
+Developer             201-250
+QA Engineer           251-300
+DevOps Engineer       301-350
+UI/UX Consultant      351-400
+Presales Consultant   401-450
+Delivery Manager      451-500
+Scrum Master          501-550
+AI Consultant         551-600

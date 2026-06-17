@@ -1,273 +1,1202 @@
 [
-  {
+   {
     "id": 1,
     "role": "Business Analyst",
     "category": "Analysis",
     "subcategory": "Requirements",
     "name": "Requirement Analysis",
-    "description": "Analyze business requirements and identify gaps",
-    "tags": ["requirements", "analysis", "enterprise"],
-    "template": "# Role / Persona\nAct as a {{ROLE}}.\n\n# Instruction / Task\nAnalyze the provided requirement and identify objectives, scope, assumptions, risks, dependencies, constraints, and gaps.\n\n# Context / Data\n{{REQUIREMENT}}\n\n# Constraints / Output Format\nProvide:\n1. Executive Summary\n2. Business Objectives\n3. Functional Requirements\n4. Non-Functional Requirements\n5. Risks\n6. Recommendations"
+    "description": "Analyze business requirements and identify gaps, assumptions, and dependencies.",
+    "tags": ["requirements", "analysis", "business"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nAnalyze the provided requirement and identify objectives, scope, assumptions, dependencies, risks, constraints, and gaps.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. Business Objectives\n3. Scope\n4. Assumptions\n5. Dependencies\n6. Risks\n7. Requirement Gaps\n8. Recommendations"
   },
   {
     "id": 2,
     "role": "Business Analyst",
     "category": "Analysis",
-    "name": "Process Flow Analysis",
-    "description": "Analyze and map business processes",
-    "tags": ["process", "flow", "mapping"],
-    "template": "Create a detailed process flow analysis for:\n\nProcess: {{REQUIREMENT}}\n\nInclude:\n1. Current state process steps\n2. Bottlenecks and pain points\n3. Improvement opportunities\n4. Future state recommendations"
+    "subcategory": "Stakeholder Management",
+    "name": "Stakeholder Analysis",
+    "description": "Identify stakeholders, influence levels, responsibilities, and engagement strategies.",
+    "tags": ["stakeholders", "analysis", "engagement"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nAnalyze the requirement and identify all stakeholders impacted by the initiative.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Stakeholder List\n2. Roles and Responsibilities\n3. Influence Matrix\n4. Interest Matrix\n5. Communication Needs\n6. Engagement Strategy\n7. Recommendations"
   },
   {
     "id": 3,
     "role": "Business Analyst",
     "category": "Documentation",
-    "name": "Requirements Document",
-    "description": "Generate formal requirements documentation",
-    "tags": ["requirements", "documentation", "formal"],
-    "template": "Create a formal requirements specification for:\n\n{{REQUIREMENT}}\n\nDocument structure:\n1. Executive Summary\n2. Business Requirements\n3. Functional Requirements\n4. Non-Functional Requirements\n5. Acceptance Criteria\n6. Dependencies and Assumptions"
+    "subcategory": "Requirements",
+    "name": "Business Requirements Document",
+    "description": "Create a complete Business Requirements Document from provided requirements.",
+    "tags": ["brd", "documentation", "requirements"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nCreate a Business Requirements Document using the provided information.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. Background\n3. Business Objectives\n4. Scope\n5. Functional Requirements\n6. Non-Functional Requirements\n7. Assumptions\n8. Risks\n9. Success Criteria"
   },
   {
     "id": 4,
-    "role": "Solution Architect",
-    "category": "Architecture",
-    "name": "System Architecture Design",
-    "description": "Design high-level system architecture",
-    "tags": ["architecture", "design", "system"],
-    "template": "Design a system architecture for:\n\nSystem: {{REQUIREMENT}}\n\nProvide:\n1. Architecture diagram description\n2. Core components and their responsibilities\n3. Integration points\n4. Scalability and performance considerations\n5. Security architecture\n6. Disaster recovery approach"
+    "role": "Business Analyst",
+    "category": "Requirements",
+    "subcategory": "User Stories",
+    "name": "User Story Generation",
+    "description": "Convert requirements into structured agile user stories.",
+    "tags": ["userstories", "agile", "requirements"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nConvert requirements into agile user stories.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nFor each story provide:\n1. User Story\n2. Acceptance Criteria\n3. Business Value\n4. Priority\n5. Dependencies"
   },
   {
     "id": 5,
-    "role": "Solution Architect",
-    "category": "Architecture",
-    "name": "Technology Stack Selection",
-    "description": "Recommend technology stack for a solution",
-    "tags": ["technology", "stack", "recommendation"],
-    "template": "Recommend a technology stack for the following solution:\n\nProject: {{REQUIREMENT}}\n\nEvaluate and recommend:\n1. Backend framework/runtime\n2. Frontend framework\n3. Database solutions\n4. Infrastructure and cloud platform\n5. DevOps and CI/CD tools\n6. Monitoring and logging solutions\n7. Justification for each choice"
+    "role": "Business Analyst",
+    "category": "Requirements",
+    "subcategory": "Validation",
+    "name": "Requirement Validation",
+    "description": "Validate completeness, consistency, and feasibility of requirements.",
+    "tags": ["validation", "requirements", "quality"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nValidate the provided requirements.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Completeness Assessment\n2. Consistency Review\n3. Feasibility Analysis\n4. Ambiguities\n5. Missing Information\n6. Recommendations"
   },
   {
     "id": 6,
-    "role": "Solution Architect",
-    "category": "Security",
-    "name": "Security Architecture Review",
-    "description": "Review and design security architecture",
-    "tags": ["security", "architecture", "review"],
-    "template": "Review the security architecture for:\n\nSystem: {{REQUIREMENT}}\n\nAnalyze:\n1. Authentication mechanisms\n2. Authorization and access control\n3. Data encryption (in transit and at rest)\n4. Vulnerability assessment\n5. Compliance requirements\n6. Security testing strategy\n7. Incident response plan"
+    "role": "Business Analyst",
+    "category": "Analysis",
+    "subcategory": "Gap Analysis",
+    "name": "Business Gap Analysis",
+    "description": "Identify differences between current and desired future state.",
+    "tags": ["gapanalysis", "futurestate", "currentstate"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nPerform a gap analysis between current and future state.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Current State\n2. Future State\n3. Identified Gaps\n4. Impact Assessment\n5. Recommendations"
   },
   {
     "id": 7,
-    "role": "Developer",
-    "category": "Development",
-    "name": "API Design",
-    "description": "Design RESTful API endpoints",
-    "tags": ["api", "rest", "design"],
-    "template": "Design a RESTful API for:\n\nFeature: {{REQUIREMENT}}\n\nSpecify:\n1. Endpoint paths and HTTP methods\n2. Request/response schemas\n3. Error handling and status codes\n4. Authentication/authorization\n5. Rate limiting strategy\n6. Versioning approach\n7. API documentation format"
+    "role": "Business Analyst",
+    "category": "Process Improvement",
+    "subcategory": "Workflow",
+    "name": "Process Mapping",
+    "description": "Create detailed business process maps and identify improvements.",
+    "tags": ["process", "workflow", "optimization"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nMap the business process and identify optimization opportunities.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Process Steps\n2. Actors\n3. Inputs\n4. Outputs\n5. Bottlenecks\n6. Improvement Opportunities"
   },
   {
     "id": 8,
-    "role": "Developer",
-    "category": "Development",
-    "name": "Code Review Checklist",
-    "description": "Generate code review checklist",
-    "tags": ["code", "review", "checklist"],
-    "template": "Create a code review checklist for:\n\nCode/Feature: {{REQUIREMENT}}\n\nReview criteria:\n1. Code quality and style\n2. Performance optimization\n3. Error handling\n4. Testing coverage\n5. Security considerations\n6. Documentation\n7. Backward compatibility\n8. Best practices alignment"
+    "role": "Business Analyst",
+    "category": "Requirements",
+    "subcategory": "Use Cases",
+    "name": "Use Case Modeling",
+    "description": "Generate comprehensive business use cases.",
+    "tags": ["usecase", "modeling", "analysis"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nCreate business use cases from the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Use Case Name\n2. Actors\n3. Preconditions\n4. Main Flow\n5. Alternate Flows\n6. Postconditions"
   },
   {
     "id": 9,
-    "role": "Developer",
-    "category": "Development",
-    "name": "Algorithm Implementation",
-    "description": "Implement algorithm solution",
-    "tags": ["algorithm", "implementation", "coding"],
-    "template": "Implement a solution for the following algorithm problem:\n\nProblem: {{REQUIREMENT}}\n\nProvide:\n1. Problem analysis and examples\n2. Algorithm explanation\n3. Pseudo-code\n4. Full implementation code\n5. Time and space complexity analysis\n6. Edge cases handling\n7. Test cases"
+    "role": "Business Analyst",
+    "category": "Analysis",
+    "subcategory": "Risk",
+    "name": "Business Risk Assessment",
+    "description": "Identify business risks and mitigation strategies.",
+    "tags": ["risk", "assessment", "mitigation"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nAssess business risks associated with the requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Risk Register\n2. Impact Assessment\n3. Probability Assessment\n4. Mitigation Plan\n5. Contingency Plan"
   },
   {
     "id": 10,
-    "role": "Developer",
+    "role": "Business Analyst",
     "category": "Documentation",
-    "name": "Code Documentation",
-    "description": "Generate comprehensive code documentation",
-    "tags": ["documentation", "code", "comments"],
-    "template": "Create comprehensive documentation for:\n\nCode Module: {{REQUIREMENT}}\n\nInclude:\n1. Module overview and purpose\n2. Function/method descriptions\n3. Parameters and return values\n4. Usage examples\n5. Dependencies\n6. Performance considerations\n7. Known limitations"
+    "subcategory": "Functional Specification",
+    "name": "Functional Specification Creation",
+    "description": "Generate detailed functional specifications from requirements.",
+    "tags": ["functional", "specification", "documentation"],
+    "template": "# Role / Persona\n\nAct as a Business Analyst.\n\n# Instruction / Task\n\nCreate a functional specification document.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Functional Overview\n2. Features\n3. Business Rules\n4. Validation Rules\n5. Process Flow\n6. Acceptance Criteria"
   },
   {
-    "id": 11,
-    "role": "Mobile Developer",
-    "category": "Development",
-    "name": "Mobile App Feature Design",
-    "description": "Design mobile application features",
-    "tags": ["mobile", "app", "design"],
-    "template": "Design a mobile app feature for:\n\nFeature: {{REQUIREMENT}}\n\nProvide:\n1. User journey and wireflows\n2. UI/UX specifications\n3. Platform-specific considerations (iOS/Android)\n4. Performance optimization\n5. Offline functionality\n6. Testing strategy\n7. Analytics tracking plan"
-  },
-  {
-    "id": 12,
-    "role": "Mobile Developer",
-    "category": "Development",
-    "name": "Mobile API Integration",
-    "description": "Design mobile API integration strategy",
-    "tags": ["mobile", "api", "integration"],
-    "template": "Design API integration for mobile app:\n\nIntegration: {{REQUIREMENT}}\n\nAddress:\n1. Authentication handling\n2. Network resilience\n3. Data caching strategy\n4. Offline support\n5. Error handling\n6. Security measures\n7. Performance optimization (battery, data usage)"
-  },
-  {
-    "id": 13,
-    "role": "QA Engineer",
-    "category": "Testing",
-    "name": "Test Plan Creation",
-    "description": "Create comprehensive test plan",
-    "tags": ["testing", "plan", "qa"],
-    "template": "Create a test plan for:\n\nFeature/System: {{REQUIREMENT}}\n\nInclude:\n1. Testing scope and objectives\n2. Test types (unit, integration, system, acceptance)\n3. Test environment requirements\n4. Testing schedule and resources\n5. Entry and exit criteria\n6. Risk assessment\n7. Deliverables"
-  },
-  {
-    "id": 14,
-    "role": "QA Engineer",
-    "category": "Testing",
-    "name": "Test Case Generation",
-    "description": "Generate test cases for requirements",
-    "tags": ["testing", "testcases", "qa"],
-    "template": "Generate test cases for:\n\nRequirement: {{REQUIREMENT}}\n\nProvide:\n1. Positive test scenarios\n2. Negative test scenarios\n3. Edge case scenarios\n4. Performance test cases\n5. Security test cases\n6. Detailed test steps\n7. Expected results\n8. Test data requirements"
-  },
-  {
-    "id": 15,
-    "role": "QA Engineer",
-    "category": "Testing",
-    "name": "Automation Test Strategy",
-    "description": "Design test automation strategy",
-    "tags": ["automation", "testing", "strategy"],
-    "template": "Design test automation strategy for:\n\nApplication: {{REQUIREMENT}}\n\nDefine:\n1. Automation scope and priorities\n2. Test automation framework selection\n3. Tool recommendations\n4. Test automation architecture\n5. Maintenance strategy\n6. CI/CD integration\n7. ROI analysis"
-  },
-  {
-    "id": 16,
-    "role": "Project Manager",
-    "category": "Project Management",
-    "name": "Project Plan",
-    "description": "Create project management plan",
-    "tags": ["project", "plan", "management"],
-    "template": "Create a project plan for:\n\nProject: {{REQUIREMENT}}\n\nInclude:\n1. Project scope and objectives\n2. Work breakdown structure (WBS)\n3. Timeline and milestones\n4. Resource allocation\n5. Risk management plan\n6. Communication plan\n7. Quality assurance approach\n8. Budget estimation"
-  },
-  {
-    "id": 17,
-    "role": "Project Manager",
-    "category": "Project Management",
-    "name": "Risk Management Plan",
-    "description": "Develop risk management strategy",
-    "tags": ["risk", "management", "planning"],
-    "template": "Develop a risk management plan for:\n\nProject/Initiative: {{REQUIREMENT}}\n\nAddress:\n1. Risk identification\n2. Risk analysis (probability and impact)\n3. Risk prioritization\n4. Mitigation strategies\n5. Contingency plans\n6. Risk monitoring approach\n7. Escalation procedures"
-  },
-  {
-    "id": 18,
-    "role": "Project Manager",
-    "category": "Documentation",
-    "name": "Stakeholder Communication Plan",
-    "description": "Create stakeholder communication plan",
-    "tags": ["stakeholders", "communication", "plan"],
-    "template": "Create a stakeholder communication plan for:\n\nProject: {{REQUIREMENT}}\n\nDefine:\n1. Stakeholder identification and analysis\n2. Communication objectives\n3. Key messages\n4. Communication channels\n5. Frequency and schedule\n6. Responsible parties\n7. Feedback mechanisms"
-  },
-  {
-    "id": 19,
-    "role": "DevOps Engineer",
-    "category": "DevOps",
-    "name": "CI/CD Pipeline Design",
-    "description": "Design continuous integration/deployment pipeline",
-    "tags": ["cicd", "devops", "pipeline"],
-    "template": "Design a CI/CD pipeline for:\n\nApplication: {{REQUIREMENT}}\n\nSpecify:\n1. Build automation strategy\n2. Testing stages in pipeline\n3. Deployment strategy\n4. Environment management\n5. Monitoring and alerting\n6. Rollback procedures\n7. Infrastructure as Code approach"
-  },
-  {
-    "id": 20,
-    "role": "DevOps Engineer",
-    "category": "DevOps",
-    "name": "Infrastructure Architecture",
-    "description": "Design infrastructure architecture",
-    "tags": ["infrastructure", "devops", "architecture"],
-    "template": "Design infrastructure for:\n\nApplication: {{REQUIREMENT}}\n\nInclude:\n1. Cloud provider selection\n2. Compute resources (VMs, containers, serverless)\n3. Network architecture\n4. Storage solutions\n5. Load balancing strategy\n6. Auto-scaling configuration\n7. Disaster recovery setup"
-  },
-  {
-    "id": 21,
-    "role": "DevOps Engineer",
-    "category": "DevOps",
-    "name": "Monitoring & Observability",
-    "description": "Design monitoring and observability strategy",
-    "tags": ["monitoring", "observability", "devops"],
-    "template": "Design monitoring and observability for:\n\nSystem: {{REQUIREMENT}}\n\nAddress:\n1. Metrics collection strategy\n2. Log aggregation\n3. Distributed tracing\n4. Alerting strategy\n5. Dashboards and visualization\n6. SLA/SLO definitions\n7. Incident response process"
-  },
-  {
-    "id": 22,
-    "role": "UI/UX Designer",
-    "category": "Development",
-    "name": "UI/UX Design Specification",
-    "description": "Create UI/UX design specifications",
-    "tags": ["uiux", "design", "specification"],
-    "template": "Create UI/UX design specifications for:\n\nFeature/Product: {{REQUIREMENT}}\n\nInclude:\n1. User personas and journey\n2. Wireframes description\n3. Visual design guidelines\n4. Component specifications\n5. Interaction patterns\n6. Accessibility requirements\n7. Responsive design approach"
-  },
-  {
-    "id": 23,
-    "role": "UI/UX Designer",
-    "category": "Documentation",
-    "name": "Design System Documentation",
-    "description": "Document design system components",
-    "tags": ["design", "system", "documentation"],
-    "template": "Create design system documentation for:\n\nComponent/Pattern: {{REQUIREMENT}}\n\nDocument:\n1. Component purpose and usage\n2. Visual specifications\n3. Interaction states\n4. Code examples\n5. Accessibility compliance\n6. Do's and don'ts\n7. Related components"
-  },
-  {
-    "id": 24,
-    "role": "Presales Consultant",
-    "category": "Presales",
-    "name": "Solution Proposal",
-    "description": "Create client solution proposal",
-    "tags": ["presales", "proposal", "solution"],
-    "template": "Create a solution proposal for:\n\nClient Requirement: {{REQUIREMENT}}\n\nInclude:\n1. Executive summary\n2. Problem statement\n3. Proposed solution overview\n4. Implementation approach\n5. Timeline and milestones\n6. Investment and ROI\n7. Success criteria\n8. Appendices (tech specs, references)"
-  },
-  {
-    "id": 25,
-    "role": "Presales Consultant",
-    "category": "Presales",
-    "name": "Discovery Questions",
-    "description": "Generate discovery questions for prospects",
-    "tags": ["presales", "discovery", "qualification"],
-    "template": "Generate discovery questions for:\n\nBusiness Context: {{REQUIREMENT}}\n\nCreate questions that uncover:\n1. Business objectives and challenges\n2. Current state and pain points\n3. Success metrics and desired outcomes\n4. Timeline and budget\n5. Stakeholders and decision makers\n6. Technical requirements\n7. Integration needs"
-  },
-  {
-    "id": 26,
-    "role": "Presales Consultant",
-    "category": "Documentation",
-    "name": "ROI Analysis",
-    "description": "Analyze return on investment",
-    "tags": ["presales", "roi", "analysis"],
-    "template": "Conduct ROI analysis for:\n\nInitiative/Solution: {{REQUIREMENT}}\n\nAnalyze:\n1. Investment required (capital and operational)\n2. Cost savings and revenue benefits\n3. Payback period calculation\n4. Financial projections (3-5 years)\n5. Risk factors and assumptions\n6. Comparison with alternatives\n7. Executive summary"
-  },
-  {
-    "id": 27,
+    "id": 51,
     "role": "Product Manager",
-    "category": "Documentation",
-    "name": "Product Requirements Document (PRD)",
-    "description": "Create product requirements document",
-    "tags": ["product", "prd", "requirements"],
-    "template": "Create a Product Requirements Document for:\n\nProduct/Feature: {{REQUIREMENT}}\n\nInclude:\n1. Product vision and goals\n2. Target users and personas\n3. Problem statement\n4. Feature requirements\n5. Success metrics and KPIs\n6. Roadmap and priorities\n7. Technical constraints\n8. Launch strategy"
+    "category": "Product Strategy",
+    "subcategory": "Vision",
+    "name": "Product Vision Development",
+    "description": "Define a strategic product vision aligned with business objectives and customer needs.",
+    "tags": ["vision", "strategy", "product"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nDevelop a compelling product vision based on the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Vision Statement\n2. Business Objectives\n3. Target Audience\n4. Customer Value Proposition\n5. Strategic Goals\n6. Success Metrics"
   },
   {
-    "id": 28,
+    "id": 52,
     "role": "Product Manager",
-    "category": "Analysis",
+    "category": "Roadmap",
+    "subcategory": "Planning",
+    "name": "Product Roadmap Planning",
+    "description": "Create a phased roadmap with milestones, priorities, and delivery timelines.",
+    "tags": ["roadmap", "planning", "delivery"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nCreate a product roadmap for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Product Goals\n2. Roadmap Phases\n3. Key Features\n4. Release Timeline\n5. Dependencies\n6. Risks"
+  },
+  {
+    "id": 53,
+    "role": "Product Manager",
+    "category": "Market Analysis",
+    "subcategory": "Research",
+    "name": "Market Opportunity Analysis",
+    "description": "Assess market demand, trends, and growth opportunities for the product.",
+    "tags": ["market", "research", "opportunity"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nAnalyze the market opportunity for the proposed product.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Market Overview\n2. Target Segments\n3. Market Trends\n4. Growth Opportunities\n5. Risks\n6. Recommendations"
+  },
+  {
+    "id": 54,
+    "role": "Product Manager",
+    "category": "Prioritization",
+    "subcategory": "Features",
+    "name": "Feature Prioritization Framework",
+    "description": "Prioritize product features using value, effort, and strategic impact.",
+    "tags": ["prioritization", "features", "value"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nPrioritize the identified product features.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Feature Inventory\n2. Business Value Score\n3. Effort Estimate\n4. Priority Ranking\n5. Release Recommendation"
+  },
+  {
+    "id": 55,
+    "role": "Product Manager",
+    "category": "Product Discovery",
+    "subcategory": "Customer Research",
+    "name": "Customer Problem Discovery",
+    "description": "Identify customer pain points and unmet needs that the product should address.",
+    "tags": ["customer", "research", "discovery"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nIdentify customer problems and opportunities from the requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Customer Segments\n2. Pain Points\n3. Current Challenges\n4. Opportunity Areas\n5. Recommendations"
+  },
+  {
+    "id": 56,
+    "role": "Product Manager",
+    "category": "Product Strategy",
+    "subcategory": "Positioning",
+    "name": "Product Positioning Strategy",
+    "description": "Define positioning and differentiation strategies for the product.",
+    "tags": ["positioning", "branding", "strategy"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nDevelop a product positioning strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Target Market\n2. Positioning Statement\n3. Differentiators\n4. Competitive Advantages\n5. Messaging Recommendations"
+  },
+  {
+    "id": 57,
+    "role": "Product Manager",
+    "category": "Product Discovery",
+    "subcategory": "Personas",
+    "name": "User Persona Development",
+    "description": "Create detailed user personas for target customer segments.",
+    "tags": ["persona", "users", "research"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nDevelop user personas based on the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Persona Name\n2. Demographics\n3. Goals\n4. Pain Points\n5. Motivations\n6. Product Expectations"
+  },
+  {
+    "id": 58,
+    "role": "Product Manager",
+    "category": "Prioritization",
+    "subcategory": "MVP",
+    "name": "MVP Scope Definition",
+    "description": "Define the minimum viable product scope required for initial launch.",
+    "tags": ["mvp", "scope", "launch"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nDefine an MVP scope for the product.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Core Features\n2. Nice-to-Have Features\n3. Excluded Features\n4. MVP Objectives\n5. Launch Success Criteria"
+  },
+  {
+    "id": 59,
+    "role": "Product Manager",
+    "category": "Market Analysis",
+    "subcategory": "Competition",
     "name": "Competitive Analysis",
-    "description": "Conduct competitive market analysis",
-    "tags": ["product", "competition", "analysis"],
-    "template": "Conduct competitive analysis for:\n\nProduct/Market: {{REQUIREMENT}}\n\nAnalyze:\n1. Direct and indirect competitors\n2. Competitor features and positioning\n3. Pricing strategy comparison\n4. Market gaps and opportunities\n5. Differentiation strategy\n6. Threat assessment\n7. Strategic recommendations"
+    "description": "Evaluate competitors and identify strategic opportunities.",
+    "tags": ["competition", "market", "analysis"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nPerform a competitive analysis.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Competitor Overview\n2. Feature Comparison\n3. Strengths\n4. Weaknesses\n5. Market Gaps\n6. Strategic Recommendations"
   },
   {
-    "id": 29,
+    "id": 60,
     "role": "Product Manager",
-    "category": "Project Management",
-    "name": "Feature Prioritization Matrix",
-    "description": "Create feature prioritization matrix",
-    "tags": ["product", "prioritization", "roadmap"],
-    "template": "Create a feature prioritization matrix for:\n\nProduct Features: {{REQUIREMENT}}\n\nEvaluate features based on:\n1. User impact and value\n2. Business impact and ROI\n3. Implementation complexity\n4. Technical risk\n5. Dependencies\n6. Resource availability\n7. Strategic alignment"
+    "category": "Roadmap",
+    "subcategory": "Release Management",
+    "name": "Release Planning",
+    "description": "Plan product releases, milestones, dependencies, and success measures.",
+    "tags": ["release", "planning", "roadmap"],
+    "template": "# Role / Persona\n\nAct as a Product Manager.\n\n# Instruction / Task\n\nCreate a release plan for the product initiative.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Release Objectives\n2. Planned Features\n3. Milestones\n4. Dependencies\n5. Risks\n6. Success Metrics"
   },
   {
-    "id": 30,
+    "id": 101,
+    "role": "Solution Architect",
+    "category": "Architecture",
+    "subcategory": "Solution Design",
+    "name": "Solution Architecture Blueprint",
+    "description": "Design an end-to-end solution architecture aligned with business and technical requirements.",
+    "tags": ["architecture", "solution", "enterprise"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nDesign a comprehensive solution architecture for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. Architecture Overview\n3. Major Components\n4. Integration Points\n5. Technology Recommendations\n6. Risks\n7. Architecture Diagram Description"
+  },
+  {
+    "id": 102,
+    "role": "Solution Architect",
+    "category": "Integration",
+    "subcategory": "Enterprise Integration",
+    "name": "Integration Architecture Design",
+    "description": "Design enterprise integration architecture for systems, applications, and external services.",
+    "tags": ["integration", "api", "enterprise"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nDesign an integration architecture for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Integration Overview\n2. Source Systems\n3. Target Systems\n4. Integration Patterns\n5. Data Flow\n6. Security Considerations\n7. Recommendations"
+  },
+  {
+    "id": 103,
+    "role": "Solution Architect",
+    "category": "Cloud",
+    "subcategory": "Cloud Architecture",
+    "name": "Cloud Architecture Assessment",
+    "description": "Evaluate and design a cloud architecture strategy for scalability and resilience.",
+    "tags": ["cloud", "aws", "azure"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nDesign a cloud architecture strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Cloud Strategy\n2. Deployment Model\n3. Core Services\n4. High Availability Design\n5. Disaster Recovery\n6. Cost Considerations\n7. Recommendations"
+  },
+  {
+    "id": 104,
+    "role": "Solution Architect",
+    "category": "Security",
+    "subcategory": "Architecture Security",
+    "name": "Security Architecture Review",
+    "description": "Analyze security requirements and recommend architectural controls.",
+    "tags": ["security", "architecture", "compliance"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nReview the solution from a security architecture perspective.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Security Requirements\n2. Threat Analysis\n3. Security Controls\n4. Compliance Requirements\n5. Risks\n6. Mitigation Recommendations"
+  },
+  {
+    "id": 105,
+    "role": "Solution Architect",
+    "category": "Scalability",
+    "subcategory": "Performance",
+    "name": "Scalability Assessment",
+    "description": "Assess scalability requirements and recommend architecture improvements.",
+    "tags": ["scalability", "performance", "growth"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nEvaluate scalability requirements and design recommendations.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Current Assumptions\n2. Scalability Requirements\n3. Bottlenecks\n4. Scaling Strategy\n5. Capacity Planning\n6. Recommendations"
+  },
+  {
+    "id": 106,
+    "role": "Solution Architect",
+    "category": "Architecture",
+    "subcategory": "Technology Selection",
+    "name": "Technology Stack Evaluation",
+    "description": "Evaluate and recommend the most suitable technology stack for implementation.",
+    "tags": ["technology", "stack", "selection"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nEvaluate technology options and recommend an implementation stack.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Technology Requirements\n2. Candidate Technologies\n3. Pros and Cons\n4. Evaluation Matrix\n5. Recommended Stack\n6. Justification"
+  },
+  {
+    "id": 107,
+    "role": "Solution Architect",
+    "category": "Architecture",
+    "subcategory": "Multi-Tenant",
+    "name": "Multi-Tenant Architecture Design",
+    "description": "Design a secure and scalable multi-tenant architecture for SaaS platforms.",
+    "tags": ["saas", "multitenant", "architecture"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nDesign a multi-tenant architecture for the provided solution.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Tenant Model\n2. Data Isolation Strategy\n3. Security Controls\n4. Scalability Approach\n5. Operational Considerations\n6. Recommendations"
+  },
+  {
+    "id": 108,
+    "role": "Solution Architect",
+    "category": "Integration",
+    "subcategory": "API Strategy",
+    "name": "API Architecture Design",
+    "description": "Design API architecture standards, security, governance, and integration patterns.",
+    "tags": ["api", "rest", "integration"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nDesign an API architecture strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. API Strategy\n2. API Types\n3. Security Model\n4. Versioning Approach\n5. Governance Standards\n6. Recommendations"
+  },
+  {
+    "id": 109,
+    "role": "Solution Architect",
+    "category": "Cloud",
+    "subcategory": "Migration",
+    "name": "Application Migration Strategy",
+    "description": "Develop a migration roadmap for legacy systems and applications.",
+    "tags": ["migration", "modernization", "cloud"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nCreate a migration strategy for the provided environment.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Current State Assessment\n2. Migration Approach\n3. Target Architecture\n4. Risks\n5. Migration Phases\n6. Recommendations"
+  },
+  {
+    "id": 110,
+    "role": "Solution Architect",
+    "category": "Architecture",
+    "subcategory": "Governance",
+    "name": "Architecture Governance Review",
+    "description": "Evaluate architectural compliance, standards, and governance practices.",
+    "tags": ["governance", "architecture", "standards"],
+    "template": "# Role / Persona\n\nAct as a Solution Architect.\n\n# Instruction / Task\n\nReview architectural governance requirements and controls.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Governance Framework\n2. Architecture Standards\n3. Compliance Requirements\n4. Review Process\n5. Risks and Gaps\n6. Recommendations"
+  },
+  {
+    "id": 151,
+    "role": "Software Architect",
+    "category": "Design Patterns",
+    "subcategory": "Architecture Design",
+    "name": "Software Architecture Design",
+    "description": "Design a robust software architecture aligned with functional and non-functional requirements.",
+    "tags": ["architecture", "design", "software"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nDesign a software architecture for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Architecture Overview\n2. Architectural Style\n3. Major Components\n4. Technology Stack\n5. Design Decisions\n6. Risks\n7. Recommendations"
+  },
+  {
+    "id": 152,
+    "role": "Software Architect",
+    "category": "Microservices",
+    "subcategory": "Service Design",
+    "name": "Microservices Architecture Planning",
+    "description": "Design a scalable microservices architecture with clear service boundaries.",
+    "tags": ["microservices", "services", "architecture"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nDesign a microservices architecture for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Service Boundaries\n2. Service Responsibilities\n3. Communication Patterns\n4. Data Ownership\n5. Deployment Strategy\n6. Recommendations"
+  },
+  {
+    "id": 153,
+    "role": "Software Architect",
+    "category": "Event Driven",
+    "subcategory": "Messaging",
+    "name": "Event Driven Architecture Design",
+    "description": "Design an event-driven architecture using messaging and asynchronous communication patterns.",
+    "tags": ["eventdriven", "messaging", "architecture"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nDesign an event-driven architecture.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Event Sources\n2. Event Types\n3. Messaging Platform\n4. Consumer Services\n5. Error Handling Strategy\n6. Recommendations"
+  },
+  {
+    "id": 154,
+    "role": "Software Architect",
+    "category": "Performance",
+    "subcategory": "Optimization",
+    "name": "Performance Architecture Assessment",
+    "description": "Analyze architecture performance requirements and recommend optimization strategies.",
+    "tags": ["performance", "optimization", "scalability"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nAssess architectural performance requirements.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Performance Requirements\n2. Bottlenecks\n3. Optimization Opportunities\n4. Scaling Strategy\n5. Monitoring Requirements\n6. Recommendations"
+  },
+  {
+    "id": 155,
+    "role": "Software Architect",
+    "category": "Data Architecture",
+    "subcategory": "Database Design",
+    "name": "Enterprise Data Architecture",
+    "description": "Design an enterprise data architecture including storage, integration, and governance.",
+    "tags": ["data", "database", "architecture"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nDesign an enterprise data architecture.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Data Model Overview\n2. Storage Strategy\n3. Data Flows\n4. Integration Requirements\n5. Governance Considerations\n6. Recommendations"
+  },
+  {
+    "id": 156,
+    "role": "Software Architect",
+    "category": "Design Patterns",
+    "subcategory": "Application Design",
+    "name": "Design Pattern Recommendation",
+    "description": "Identify and recommend software design patterns suitable for the solution.",
+    "tags": ["patterns", "design", "architecture"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nRecommend appropriate software design patterns.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Design Challenges\n2. Recommended Patterns\n3. Pattern Justification\n4. Benefits\n5. Risks\n6. Implementation Guidance"
+  },
+  {
+    "id": 157,
+    "role": "Software Architect",
+    "category": "Microservices",
+    "subcategory": "Domain Design",
+    "name": "Domain Driven Design Assessment",
+    "description": "Apply domain-driven design principles to define bounded contexts and domain models.",
+    "tags": ["ddd", "domain", "microservices"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nAnalyze the domain and apply domain-driven design principles.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Core Domains\n2. Supporting Domains\n3. Bounded Contexts\n4. Domain Models\n5. Service Mapping\n6. Recommendations"
+  },
+  {
+    "id": 158,
+    "role": "Software Architect",
+    "category": "Performance",
+    "subcategory": "Scalability",
+    "name": "High Availability Architecture Review",
+    "description": "Design high availability strategies to ensure business continuity and resilience.",
+    "tags": ["availability", "resilience", "performance"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nDesign a high availability architecture strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Availability Requirements\n2. Failure Scenarios\n3. Redundancy Design\n4. Recovery Strategy\n5. Monitoring Approach\n6. Recommendations"
+  },
+  {
+    "id": 159,
+    "role": "Software Architect",
+    "category": "Data Architecture",
+    "subcategory": "Data Integration",
+    "name": "Data Integration Strategy",
+    "description": "Define data integration architecture for internal and external systems.",
+    "tags": ["integration", "data", "etl"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nDesign a data integration strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Source Systems\n2. Target Systems\n3. Data Flows\n4. Integration Methods\n5. Data Quality Controls\n6. Recommendations"
+  },
+  {
+    "id": 160,
+    "role": "Software Architect",
+    "category": "Design Patterns",
+    "subcategory": "Architecture Review",
+    "name": "Architecture Tradeoff Analysis",
+    "description": "Evaluate architectural alternatives and recommend the optimal approach.",
+    "tags": ["tradeoff", "evaluation", "architecture"],
+    "template": "# Role / Persona\n\nAct as a Software Architect.\n\n# Instruction / Task\n\nPerform an architecture tradeoff analysis.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Candidate Architectures\n2. Evaluation Criteria\n3. Pros and Cons\n4. Risks\n5. Recommended Approach\n6. Decision Rationale"
+  },
+  {
+    "id": 201,
     "role": "Developer",
-    "category": "Development",
-    "name": "Bug Report Template",
-    "description": "Create standardized bug report template",
-    "tags": ["bug", "report", "template"],
-    "template": "Analyze and document the following issue:\n\nIssue: {{REQUIREMENT}}\n\nProvide in bug report format:\n1. Title and severity level\n2. Detailed description\n3. Steps to reproduce\n4. Expected vs actual behavior\n5. Environment details\n6. Screenshots/logs\n7. Impact analysis\n8. Suggested fix (if applicable)"
+    "category": "API Design",
+    "subcategory": "REST API",
+    "name": "REST API Specification Generator",
+    "description": "Design enterprise-grade REST APIs including endpoints, payloads, validation rules, and error handling.",
+    "tags": ["api", "rest", "backend"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nDesign REST APIs for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. API Overview\n2. Endpoints\n3. Request Payloads\n4. Response Payloads\n5. Validation Rules\n6. Error Codes\n7. Security Considerations"
+  },
+  {
+    "id": 202,
+    "role": "Developer",
+    "category": "Backend Development",
+    "subcategory": "Service Design",
+    "name": "Backend Service Design",
+    "description": "Design backend services, business logic layers, and application workflows.",
+    "tags": ["backend", "services", "architecture"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nDesign backend services for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Service Overview\n2. Business Logic Components\n3. Processing Flow\n4. Dependencies\n5. Error Handling\n6. Recommendations"
+  },
+  {
+    "id": 203,
+    "role": "Developer",
+    "category": "Frontend Development",
+    "subcategory": "UI Components",
+    "name": "Frontend Component Architecture",
+    "description": "Design reusable frontend components and page structures for web applications.",
+    "tags": ["frontend", "ui", "components"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nDesign frontend components and page architecture.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Screen List\n2. Component Hierarchy\n3. State Management Strategy\n4. User Interactions\n5. Validation Rules\n6. Recommendations"
+  },
+  {
+    "id": 204,
+    "role": "Developer",
+    "category": "Database Design",
+    "subcategory": "Data Modeling",
+    "name": "Database Schema Design",
+    "description": "Design relational database schemas with entities, relationships, and constraints.",
+    "tags": ["database", "schema", "sql"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nDesign a database schema for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Entities\n2. Attributes\n3. Relationships\n4. Primary Keys\n5. Foreign Keys\n6. Indexing Strategy\n7. Recommendations"
+  },
+  {
+    "id": 205,
+    "role": "Developer",
+    "category": "Security",
+    "subcategory": "Application Security",
+    "name": "Application Security Review",
+    "description": "Review application requirements and identify security controls and vulnerabilities.",
+    "tags": ["security", "authentication", "authorization"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nReview the application from a security perspective.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Security Requirements\n2. Authentication Strategy\n3. Authorization Model\n4. Vulnerabilities\n5. Mitigation Plan\n6. Recommendations"
+  },
+  {
+    "id": 206,
+    "role": "Developer",
+    "category": "API Design",
+    "subcategory": "GraphQL",
+    "name": "GraphQL API Design",
+    "description": "Design GraphQL schemas, queries, mutations, and subscription models.",
+    "tags": ["graphql", "api", "backend"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nDesign a GraphQL API architecture.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Schema Design\n2. Queries\n3. Mutations\n4. Subscriptions\n5. Security Considerations\n6. Recommendations"
+  },
+  {
+    "id": 207,
+    "role": "Developer",
+    "category": "Backend Development",
+    "subcategory": "Microservices",
+    "name": "Microservice Development Blueprint",
+    "description": "Design microservices with service boundaries, APIs, and communication patterns.",
+    "tags": ["microservices", "backend", "services"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nDesign microservices for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Service List\n2. Responsibilities\n3. APIs\n4. Communication Methods\n5. Data Ownership\n6. Deployment Considerations"
+  },
+  {
+    "id": 208,
+    "role": "Developer",
+    "category": "Frontend Development",
+    "subcategory": "State Management",
+    "name": "Frontend State Management Design",
+    "description": "Design frontend state management architecture for scalable applications.",
+    "tags": ["frontend", "state", "react"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nDesign a state management strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. State Categories\n2. State Ownership\n3. Data Flow\n4. Synchronization Strategy\n5. Performance Considerations\n6. Recommendations"
+  },
+  {
+    "id": 209,
+    "role": "Developer",
+    "category": "Database Design",
+    "subcategory": "Performance",
+    "name": "Database Performance Optimization",
+    "description": "Analyze database workloads and recommend performance improvements.",
+    "tags": ["database", "performance", "optimization"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nOptimize the database design and query performance.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Performance Requirements\n2. Query Optimization Opportunities\n3. Index Recommendations\n4. Partitioning Strategy\n5. Caching Strategy\n6. Recommendations"
+  },
+  {
+    "id": 210,
+    "role": "Developer",
+    "category": "Security",
+    "subcategory": "Secure Coding",
+    "name": "Secure Coding Assessment",
+    "description": "Identify secure coding practices and implementation guidelines for the solution.",
+    "tags": ["security", "securecoding", "development"],
+    "template": "# Role / Persona\n\nAct as a Developer.\n\n# Instruction / Task\n\nAssess secure coding requirements and implementation practices.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Security Standards\n2. Coding Guidelines\n3. Input Validation Rules\n4. Data Protection Measures\n5. Vulnerability Prevention Techniques\n6. Recommendations"
+  },
+  {
+    "id": 251,
+    "role": "QA Engineer",
+    "category": "Testing",
+    "subcategory": "Test Strategy",
+    "name": "Test Strategy Development",
+    "description": "Create a comprehensive testing strategy covering functional, non-functional, and regression testing.",
+    "tags": ["testing", "strategy", "quality"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nDevelop a complete testing strategy for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Testing Objectives\n2. Scope\n3. Testing Types\n4. Entry Criteria\n5. Exit Criteria\n6. Risks\n7. Recommendations"
+  },
+  {
+    "id": 252,
+    "role": "QA Engineer",
+    "category": "Testing",
+    "subcategory": "Test Cases",
+    "name": "Test Case Generation",
+    "description": "Generate comprehensive functional and negative test cases from requirements.",
+    "tags": ["testcases", "functional", "quality"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nGenerate detailed test cases for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Test Case ID\n2. Test Scenario\n3. Preconditions\n4. Test Steps\n5. Expected Results\n6. Priority"
+  },
+  {
+    "id": 253,
+    "role": "QA Engineer",
+    "category": "Automation",
+    "subcategory": "Test Automation",
+    "name": "Automation Framework Design",
+    "description": "Design a scalable automation framework for web, mobile, and API testing.",
+    "tags": ["automation", "framework", "testing"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nDesign an automation testing framework.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Framework Architecture\n2. Tools and Technologies\n3. Folder Structure\n4. Reusability Strategy\n5. CI/CD Integration\n6. Recommendations"
+  },
+  {
+    "id": 254,
+    "role": "QA Engineer",
+    "category": "Performance Testing",
+    "subcategory": "Load Testing",
+    "name": "Performance Testing Plan",
+    "description": "Create a performance testing plan covering load, stress, endurance, and scalability testing.",
+    "tags": ["performance", "loadtest", "scalability"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nCreate a performance testing strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Performance Objectives\n2. Workload Profiles\n3. Test Scenarios\n4. Success Criteria\n5. Monitoring Metrics\n6. Recommendations"
+  },
+  {
+    "id": 255,
+    "role": "QA Engineer",
+    "category": "Security Testing",
+    "subcategory": "Vulnerability Assessment",
+    "name": "Security Testing Assessment",
+    "description": "Identify security testing requirements and vulnerability validation strategies.",
+    "tags": ["security", "vulnerability", "testing"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nAssess security testing requirements.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Security Test Areas\n2. Vulnerability Categories\n3. Testing Approach\n4. Compliance Considerations\n5. Risk Assessment\n6. Recommendations"
+  },
+  {
+    "id": 256,
+    "role": "QA Engineer",
+    "category": "Testing",
+    "subcategory": "Regression Testing",
+    "name": "Regression Test Suite Design",
+    "description": "Design a regression test suite to ensure stability across releases.",
+    "tags": ["regression", "testing", "quality"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nCreate a regression testing strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Critical Test Areas\n2. Regression Scope\n3. Automation Opportunities\n4. Execution Frequency\n5. Risks\n6. Recommendations"
+  },
+  {
+    "id": 257,
+    "role": "QA Engineer",
+    "category": "Test Management",
+    "subcategory": "Release Quality",
+    "name": "Release Readiness Assessment",
+    "description": "Evaluate application quality and determine release readiness criteria.",
+    "tags": ["release", "quality", "readiness"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nAssess release readiness based on quality indicators.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Quality Metrics\n2. Open Defects Summary\n3. Risk Analysis\n4. Readiness Status\n5. Go/No-Go Recommendation\n6. Action Items"
+  },
+  {
+    "id": 258,
+    "role": "QA Engineer",
+    "category": "Automation",
+    "subcategory": "API Testing",
+    "name": "API Test Automation Design",
+    "description": "Design automated API testing coverage including validation, security, and performance checks.",
+    "tags": ["api", "automation", "testing"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nDesign API automation test coverage.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. API Test Scenarios\n2. Validation Rules\n3. Security Checks\n4. Automation Framework\n5. Reporting Strategy\n6. Recommendations"
+  },
+  {
+    "id": 259,
+    "role": "QA Engineer",
+    "category": "Testing",
+    "subcategory": "UAT",
+    "name": "User Acceptance Testing Plan",
+    "description": "Create a structured user acceptance testing approach with business validation criteria.",
+    "tags": ["uat", "acceptance", "business"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nCreate a User Acceptance Testing plan.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. UAT Objectives\n2. Business Scenarios\n3. Acceptance Criteria\n4. Test Execution Plan\n5. Defect Management Process\n6. Sign-Off Criteria"
+  },
+  {
+    "id": 260,
+    "role": "QA Engineer",
+    "category": "Test Management",
+    "subcategory": "Risk Based Testing",
+    "name": "Risk Based Testing Strategy",
+    "description": "Prioritize testing efforts using business impact and technical risk analysis.",
+    "tags": ["risk", "testing", "prioritization"],
+    "template": "# Role / Persona\n\nAct as a QA Engineer.\n\n# Instruction / Task\n\nDevelop a risk-based testing strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Risk Assessment Matrix\n2. High-Risk Areas\n3. Testing Priorities\n4. Coverage Strategy\n5. Mitigation Actions\n6. Recommendations"
+  },
+  {
+    "id": 301,
+    "role": "DevOps Engineer",
+    "category": "CI/CD",
+    "subcategory": "Pipeline Design",
+    "name": "CI CD Pipeline Architecture",
+    "description": "Design a complete CI/CD pipeline for automated build, testing, security validation, and deployment.",
+    "tags": ["cicd", "pipeline", "automation"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nDesign a CI/CD pipeline for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Pipeline Overview\n2. Build Process\n3. Testing Stages\n4. Deployment Stages\n5. Security Checks\n6. Rollback Strategy\n7. Recommendations"
+  },
+  {
+    "id": 302,
+    "role": "DevOps Engineer",
+    "category": "Infrastructure",
+    "subcategory": "Infrastructure as Code",
+    "name": "Infrastructure as Code Design",
+    "description": "Design infrastructure provisioning and management using Infrastructure as Code principles.",
+    "tags": ["iac", "terraform", "infrastructure"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nDesign Infrastructure as Code for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Infrastructure Components\n2. Provisioning Strategy\n3. IaC Tool Recommendations\n4. Environment Structure\n5. Security Controls\n6. Recommendations"
+  },
+  {
+    "id": 303,
+    "role": "DevOps Engineer",
+    "category": "Kubernetes",
+    "subcategory": "Container Orchestration",
+    "name": "Kubernetes Architecture Design",
+    "description": "Design a Kubernetes platform architecture for scalable and resilient deployments.",
+    "tags": ["kubernetes", "containers", "orchestration"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nDesign a Kubernetes deployment architecture.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Cluster Architecture\n2. Namespace Strategy\n3. Workload Design\n4. Scaling Strategy\n5. Security Controls\n6. Recommendations"
+  },
+  {
+    "id": 304,
+    "role": "DevOps Engineer",
+    "category": "Monitoring",
+    "subcategory": "Observability",
+    "name": "Monitoring and Observability Strategy",
+    "description": "Design monitoring, logging, tracing, and alerting capabilities for production environments.",
+    "tags": ["monitoring", "observability", "logging"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nCreate an observability strategy for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Monitoring Requirements\n2. Logging Strategy\n3. Tracing Approach\n4. Alerting Rules\n5. Dashboards\n6. Recommendations"
+  },
+  {
+    "id": 305,
+    "role": "DevOps Engineer",
+    "category": "Cloud Operations",
+    "subcategory": "Cloud Deployment",
+    "name": "Cloud Deployment Strategy",
+    "description": "Design cloud deployment models, environments, governance, and operational processes.",
+    "tags": ["cloud", "deployment", "operations"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nCreate a cloud deployment strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Cloud Architecture\n2. Environment Strategy\n3. Deployment Model\n4. Governance Controls\n5. Cost Considerations\n6. Recommendations"
+  },
+  {
+    "id": 306,
+    "role": "DevOps Engineer",
+    "category": "CI/CD",
+    "subcategory": "Release Management",
+    "name": "Release Automation Framework",
+    "description": "Design automated release processes including approvals, deployments, and rollback mechanisms.",
+    "tags": ["release", "automation", "deployment"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nDesign a release automation framework.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Release Workflow\n2. Approval Process\n3. Deployment Strategy\n4. Rollback Procedures\n5. Risk Controls\n6. Recommendations"
+  },
+  {
+    "id": 307,
+    "role": "DevOps Engineer",
+    "category": "Infrastructure",
+    "subcategory": "Disaster Recovery",
+    "name": "Disaster Recovery Planning",
+    "description": "Develop disaster recovery and business continuity plans for critical systems.",
+    "tags": ["dr", "recovery", "resilience"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nCreate a disaster recovery strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Recovery Objectives\n2. Backup Strategy\n3. Recovery Procedures\n4. Failover Design\n5. Testing Plan\n6. Recommendations"
+  },
+  {
+    "id": 308,
+    "role": "DevOps Engineer",
+    "category": "Kubernetes",
+    "subcategory": "Platform Engineering",
+    "name": "Container Platform Design",
+    "description": "Design a secure and scalable container platform for enterprise workloads.",
+    "tags": ["containers", "platform", "devops"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nDesign a container platform architecture.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Platform Components\n2. Container Standards\n3. Security Controls\n4. Scaling Strategy\n5. Operations Model\n6. Recommendations"
+  },
+  {
+    "id": 309,
+    "role": "DevOps Engineer",
+    "category": "Monitoring",
+    "subcategory": "Site Reliability Engineering",
+    "name": "SRE Implementation Strategy",
+    "description": "Design Site Reliability Engineering practices including SLIs, SLOs, and error budgets.",
+    "tags": ["sre", "reliability", "operations"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nDevelop an SRE strategy for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Service Objectives\n2. SLIs\n3. SLOs\n4. Error Budget Strategy\n5. Reliability Improvements\n6. Recommendations"
+  },
+  {
+    "id": 310,
+    "role": "DevOps Engineer",
+    "category": "Cloud Operations",
+    "subcategory": "DevSecOps",
+    "name": "DevSecOps Architecture Review",
+    "description": "Integrate security practices into development, deployment, and operational workflows.",
+    "tags": ["devsecops", "security", "compliance"],
+    "template": "# Role / Persona\n\nAct as a DevOps Engineer.\n\n# Instruction / Task\n\nDesign a DevSecOps strategy for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Security Requirements\n2. Security Controls\n3. CI/CD Security Integration\n4. Compliance Checks\n5. Risk Mitigation Strategy\n6. Recommendations"
+  },
+  {
+    "id": 351,
+    "role": "UI/UX Consultant",
+    "category": "UX Review",
+    "subcategory": "Usability Analysis",
+    "name": "UX Heuristic Evaluation",
+    "description": "Evaluate user experience using established usability principles and identify improvement opportunities.",
+    "tags": ["ux", "usability", "heuristics"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nReview the provided requirement from a UX perspective and perform a heuristic evaluation.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. UX Assessment Summary\n2. Usability Issues\n3. Severity Ratings\n4. User Impact Analysis\n5. Improvement Recommendations\n6. Priority Actions"
+  },
+  {
+    "id": 352,
+    "role": "UI/UX Consultant",
+    "category": "UI Design",
+    "subcategory": "Screen Design",
+    "name": "UI Screen Design Specification",
+    "description": "Create detailed user interface specifications including layouts, components, and interactions.",
+    "tags": ["ui", "design", "screens"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nDesign UI screens for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Screen Inventory\n2. Layout Structure\n3. Components\n4. User Interactions\n5. Validation Rules\n6. Design Recommendations"
+  },
+  {
+    "id": 353,
+    "role": "UI/UX Consultant",
+    "category": "Accessibility",
+    "subcategory": "WCAG Compliance",
+    "name": "Accessibility Compliance Review",
+    "description": "Assess accessibility requirements and recommend improvements aligned with WCAG standards.",
+    "tags": ["accessibility", "wcag", "compliance"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nReview accessibility requirements for the provided solution.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Accessibility Assessment\n2. WCAG Compliance Gaps\n3. Keyboard Navigation Review\n4. Screen Reader Considerations\n5. Remediation Recommendations\n6. Priority Actions"
+  },
+  {
+    "id": 354,
+    "role": "UI/UX Consultant",
+    "category": "User Research",
+    "subcategory": "Persona Analysis",
+    "name": "User Persona Development",
+    "description": "Create detailed user personas representing target audience segments and their needs.",
+    "tags": ["personas", "research", "users"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nDevelop user personas based on the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Persona Profiles\n2. Goals\n3. Pain Points\n4. User Behaviors\n5. Expectations\n6. UX Recommendations"
+  },
+  {
+    "id": 355,
+    "role": "UI/UX Consultant",
+    "category": "Design Systems",
+    "subcategory": "Component Library",
+    "name": "Design System Architecture",
+    "description": "Design a scalable design system with reusable components, patterns, and standards.",
+    "tags": ["designsystem", "components", "ui"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nDesign a design system for the provided solution.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Design Principles\n2. Component Library\n3. Typography Standards\n4. Color Guidelines\n5. Interaction Patterns\n6. Governance Recommendations"
+  },
+  {
+    "id": 356,
+    "role": "UI/UX Consultant",
+    "category": "UX Review",
+    "subcategory": "Journey Mapping",
+    "name": "Customer Journey Mapping",
+    "description": "Map end-to-end customer journeys and identify friction points across user interactions.",
+    "tags": ["journey", "customer", "experience"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nCreate customer journey maps for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. User Journey Stages\n2. Touchpoints\n3. User Goals\n4. Pain Points\n5. Opportunities\n6. UX Recommendations"
+  },
+  {
+    "id": 357,
+    "role": "UI/UX Consultant",
+    "category": "UI Design",
+    "subcategory": "Responsive Design",
+    "name": "Responsive Experience Design",
+    "description": "Design responsive user experiences across desktop, tablet, and mobile platforms.",
+    "tags": ["responsive", "mobile", "design"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nDesign a responsive user experience strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Device Considerations\n2. Layout Adaptations\n3. Navigation Patterns\n4. Responsive Components\n5. Accessibility Considerations\n6. Recommendations"
+  },
+  {
+    "id": 358,
+    "role": "UI/UX Consultant",
+    "category": "User Research",
+    "subcategory": "Research Planning",
+    "name": "User Research Strategy",
+    "description": "Develop a research strategy to validate assumptions and understand user needs.",
+    "tags": ["research", "users", "validation"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nCreate a user research strategy for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Research Objectives\n2. Target Participants\n3. Research Methods\n4. Key Questions\n5. Success Criteria\n6. Recommendations"
+  },
+  {
+    "id": 359,
+    "role": "UI/UX Consultant",
+    "category": "Design Systems",
+    "subcategory": "Interaction Design",
+    "name": "Interaction Design Framework",
+    "description": "Define interaction patterns, user flows, and behavioral design standards.",
+    "tags": ["interaction", "ux", "design"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nDesign interaction patterns for the provided solution.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. User Flows\n2. Interaction Patterns\n3. Error Handling UX\n4. Feedback Mechanisms\n5. Design Principles\n6. Recommendations"
+  },
+  {
+    "id": 360,
+    "role": "UI/UX Consultant",
+    "category": "UX Review",
+    "subcategory": "UX Audit",
+    "name": "Comprehensive UX Audit",
+    "description": "Conduct a comprehensive UX audit and identify opportunities to improve usability and engagement.",
+    "tags": ["audit", "ux", "improvement"],
+    "template": "# Role / Persona\n\nAct as a UI/UX Consultant.\n\n# Instruction / Task\n\nPerform a comprehensive UX audit of the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. UX Strengths\n3. UX Issues\n4. Accessibility Findings\n5. Improvement Roadmap\n6. Recommendations"
+  },
+  {
+    "id": 401,
+    "role": "Presales Consultant",
+    "category": "Discovery",
+    "subcategory": "Requirement Discovery",
+    "name": "Client Discovery Assessment",
+    "description": "Analyze client requirements and identify business objectives, challenges, and solution opportunities.",
+    "tags": ["discovery", "requirements", "presales"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nAnalyze the provided client requirement and identify business needs and solution opportunities.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. Business Objectives\n3. Current Challenges\n4. Opportunity Areas\n5. Key Assumptions\n6. Recommendations"
+  },
+  {
+    "id": 402,
+    "role": "Presales Consultant",
+    "category": "Proposal",
+    "subcategory": "Solution Proposal",
+    "name": "Solution Proposal Development",
+    "description": "Create a professional solution proposal aligned with client requirements and business goals.",
+    "tags": ["proposal", "solution", "sales"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nDevelop a solution proposal based on the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. Proposed Solution\n3. Key Benefits\n4. Scope\n5. Assumptions\n6. Success Criteria"
+  },
+  {
+    "id": 403,
+    "role": "Presales Consultant",
+    "category": "Estimation",
+    "subcategory": "Effort Estimation",
+    "name": "Project Effort Estimation",
+    "description": "Estimate project effort, resources, timelines, and delivery considerations.",
+    "tags": ["estimation", "effort", "planning"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nEstimate project effort for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Scope Summary\n2. Effort Breakdown\n3. Resource Requirements\n4. Timeline Estimate\n5. Assumptions\n6. Risks"
+  },
+  {
+    "id": 404,
+    "role": "Presales Consultant",
+    "category": "ROI",
+    "subcategory": "Business Value",
+    "name": "ROI Assessment",
+    "description": "Evaluate return on investment, business value, and expected outcomes of the proposed solution.",
+    "tags": ["roi", "businesscase", "value"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nAssess the business value and ROI of the proposed solution.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Investment Overview\n2. Expected Benefits\n3. Cost Savings\n4. ROI Analysis\n5. Strategic Value\n6. Recommendations"
+  },
+  {
+    "id": 405,
+    "role": "Presales Consultant",
+    "category": "Solution Positioning",
+    "subcategory": "Competitive Advantage",
+    "name": "Solution Positioning Strategy",
+    "description": "Position the proposed solution against competitors and highlight differentiators.",
+    "tags": ["positioning", "competition", "strategy"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nDevelop a solution positioning strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Target Audience\n2. Key Differentiators\n3. Competitive Advantages\n4. Value Proposition\n5. Positioning Statement\n6. Recommendations"
+  },
+  {
+    "id": 406,
+    "role": "Presales Consultant",
+    "category": "Discovery",
+    "subcategory": "Workshop Planning",
+    "name": "Discovery Workshop Framework",
+    "description": "Prepare a structured discovery workshop to gather requirements and align stakeholders.",
+    "tags": ["workshop", "discovery", "stakeholders"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nCreate a discovery workshop plan.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Workshop Objectives\n2. Participants\n3. Agenda\n4. Discussion Topics\n5. Expected Outcomes\n6. Follow-up Actions"
+  },
+  {
+    "id": 407,
+    "role": "Presales Consultant",
+    "category": "Proposal",
+    "subcategory": "Scope Definition",
+    "name": "Scope of Work Creation",
+    "description": "Define project scope, deliverables, assumptions, and exclusions for client engagements.",
+    "tags": ["sow", "scope", "delivery"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nCreate a Scope of Work for the proposed solution.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Project Scope\n2. Deliverables\n3. Assumptions\n4. Exclusions\n5. Acceptance Criteria\n6. Risks"
+  },
+  {
+    "id": 408,
+    "role": "Presales Consultant",
+    "category": "Estimation",
+    "subcategory": "Resource Planning",
+    "name": "Resource Planning Assessment",
+    "description": "Determine resource requirements, skill needs, and project staffing recommendations.",
+    "tags": ["resources", "staffing", "planning"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nAssess project resource requirements.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Required Roles\n2. Skill Matrix\n3. Team Structure\n4. Resource Allocation\n5. Capacity Risks\n6. Recommendations"
+  },
+  {
+    "id": 409,
+    "role": "Presales Consultant",
+    "category": "ROI",
+    "subcategory": "Business Case",
+    "name": "Business Case Development",
+    "description": "Develop a compelling business case supporting investment and project approval.",
+    "tags": ["businesscase", "investment", "approval"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nDevelop a business case for the proposed initiative.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Problem Statement\n2. Proposed Solution\n3. Benefits\n4. Costs\n5. ROI Analysis\n6. Executive Recommendation"
+  },
+  {
+    "id": 410,
+    "role": "Presales Consultant",
+    "category": "Solution Positioning",
+    "subcategory": "Executive Presentation",
+    "name": "Executive Solution Pitch",
+    "description": "Create an executive-level solution pitch tailored to client stakeholders and decision makers.",
+    "tags": ["pitch", "executive", "presentation"],
+    "template": "# Role / Persona\n\nAct as a Presales Consultant.\n\n# Instruction / Task\n\nCreate an executive solution pitch for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. Business Challenges\n3. Proposed Solution\n4. Key Benefits\n5. Strategic Impact\n6. Call to Action"
+  },
+    {
+    "id": 451,
+    "role": "Delivery Manager",
+    "category": "Planning",
+    "subcategory": "Project Planning",
+    "name": "Delivery Planning Framework",
+    "description": "Create a comprehensive delivery plan covering scope, milestones, resources, and governance.",
+    "tags": ["delivery", "planning", "project"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nCreate a delivery plan for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Delivery Objectives\n2. Scope Summary\n3. Milestones\n4. Resource Plan\n5. Timeline\n6. Risks\n7. Recommendations"
+  },
+  {
+    "id": 452,
+    "role": "Delivery Manager",
+    "category": "Governance",
+    "subcategory": "Project Governance",
+    "name": "Delivery Governance Model",
+    "description": "Design a governance framework to manage project execution, controls, and stakeholder reporting.",
+    "tags": ["governance", "delivery", "management"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nDesign a governance model for the project.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Governance Structure\n2. Roles and Responsibilities\n3. Decision Framework\n4. Escalation Matrix\n5. Review Cadence\n6. Recommendations"
+  },
+  {
+    "id": 453,
+    "role": "Delivery Manager",
+    "category": "Resource Management",
+    "subcategory": "Team Planning",
+    "name": "Resource Allocation Strategy",
+    "description": "Plan resource allocation, utilization, and team structure to support successful delivery.",
+    "tags": ["resources", "allocation", "team"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nDevelop a resource allocation strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Team Structure\n2. Required Roles\n3. Resource Allocation\n4. Utilization Plan\n5. Capacity Risks\n6. Recommendations"
+  },
+  {
+    "id": 454,
+    "role": "Delivery Manager",
+    "category": "Risk Management",
+    "subcategory": "Risk Assessment",
+    "name": "Delivery Risk Assessment",
+    "description": "Identify delivery risks, impacts, probabilities, and mitigation strategies.",
+    "tags": ["risk", "delivery", "mitigation"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nAssess delivery risks for the provided initiative.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Risk Register\n2. Impact Assessment\n3. Probability Assessment\n4. Mitigation Actions\n5. Contingency Plans\n6. Recommendations"
+  },
+  {
+    "id": 455,
+    "role": "Delivery Manager",
+    "category": "Reporting",
+    "subcategory": "Executive Reporting",
+    "name": "Executive Delivery Status Report",
+    "description": "Prepare an executive-level status report highlighting progress, risks, and key decisions.",
+    "tags": ["reporting", "executive", "status"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nCreate an executive delivery status report.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. Delivery Status\n3. Milestone Progress\n4. Risks and Issues\n5. Decisions Required\n6. Next Steps"
+  },
+  {
+    "id": 456,
+    "role": "Delivery Manager",
+    "category": "Planning",
+    "subcategory": "Program Planning",
+    "name": "Program Delivery Roadmap",
+    "description": "Create a multi-phase delivery roadmap with dependencies, releases, and milestones.",
+    "tags": ["roadmap", "program", "delivery"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nDevelop a program delivery roadmap.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Delivery Phases\n2. Milestones\n3. Dependencies\n4. Release Plan\n5. Critical Path\n6. Recommendations"
+  },
+  {
+    "id": 457,
+    "role": "Delivery Manager",
+    "category": "Governance",
+    "subcategory": "Stakeholder Management",
+    "name": "Stakeholder Communication Plan",
+    "description": "Define stakeholder engagement, communication channels, and reporting mechanisms.",
+    "tags": ["stakeholders", "communication", "governance"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nCreate a stakeholder communication plan.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Stakeholder Groups\n2. Communication Objectives\n3. Reporting Channels\n4. Meeting Cadence\n5. Escalation Process\n6. Recommendations"
+  },
+  {
+    "id": 458,
+    "role": "Delivery Manager",
+    "category": "Resource Management",
+    "subcategory": "Capacity Planning",
+    "name": "Delivery Capacity Assessment",
+    "description": "Evaluate team capacity, workload distribution, and delivery readiness.",
+    "tags": ["capacity", "resources", "planning"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nAssess delivery capacity and team readiness.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Capacity Overview\n2. Resource Availability\n3. Workload Distribution\n4. Delivery Constraints\n5. Risks\n6. Recommendations"
+  },
+  {
+    "id": 459,
+    "role": "Delivery Manager",
+    "category": "Risk Management",
+    "subcategory": "Issue Management",
+    "name": "Issue Escalation Framework",
+    "description": "Design a structured issue management and escalation process for project delivery.",
+    "tags": ["issues", "escalation", "delivery"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nCreate an issue management and escalation framework.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Issue Categories\n2. Escalation Levels\n3. Response Timelines\n4. Resolution Process\n5. Governance Controls\n6. Recommendations"
+  },
+  {
+    "id": 460,
+    "role": "Delivery Manager",
+    "category": "Reporting",
+    "subcategory": "Portfolio Management",
+    "name": "Portfolio Delivery Health Assessment",
+    "description": "Evaluate overall delivery health across initiatives using metrics, risks, and performance indicators.",
+    "tags": ["portfolio", "health", "metrics"],
+    "template": "# Role / Persona\n\nAct as a Delivery Manager.\n\n# Instruction / Task\n\nAssess the overall delivery health of the initiative.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Delivery Health Summary\n2. KPI Assessment\n3. Risks and Issues\n4. Resource Status\n5. Improvement Actions\n6. Executive Recommendations"
+  },
+  {
+    "id": 501,
+    "role": "Scrum Master",
+    "category": "Sprint Planning",
+    "subcategory": "Sprint Preparation",
+    "name": "Sprint Planning Facilitation",
+    "description": "Create a structured sprint planning approach including goals, scope, capacity, and commitments.",
+    "tags": ["scrum", "sprint", "planning"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nPrepare a sprint planning framework for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Sprint Goal\n2. Sprint Scope\n3. Capacity Assessment\n4. Priority Backlog Items\n5. Risks and Dependencies\n6. Recommendations"
+  },
+  {
+    "id": 502,
+    "role": "Scrum Master",
+    "category": "Backlog Management",
+    "subcategory": "Backlog Refinement",
+    "name": "Product Backlog Refinement",
+    "description": "Refine backlog items into actionable user stories with acceptance criteria and priorities.",
+    "tags": ["backlog", "agile", "stories"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nRefine the provided requirements into a structured product backlog.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Epics\n2. User Stories\n3. Acceptance Criteria\n4. Priorities\n5. Dependencies\n6. Recommendations"
+  },
+  {
+    "id": 503,
+    "role": "Scrum Master",
+    "category": "Agile Coaching",
+    "subcategory": "Team Maturity",
+    "name": "Agile Maturity Assessment",
+    "description": "Assess agile maturity and recommend improvements to team practices and delivery effectiveness.",
+    "tags": ["agile", "maturity", "coaching"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nEvaluate agile maturity for the provided scenario.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Current Maturity Assessment\n2. Strengths\n3. Improvement Areas\n4. Coaching Recommendations\n5. Action Plan\n6. Success Metrics"
+  },
+  {
+    "id": 504,
+    "role": "Scrum Master",
+    "category": "Retrospectives",
+    "subcategory": "Continuous Improvement",
+    "name": "Sprint Retrospective Analysis",
+    "description": "Facilitate retrospective insights and identify actionable improvement opportunities.",
+    "tags": ["retrospective", "improvement", "scrum"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nAnalyze sprint outcomes and prepare a retrospective.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. What Went Well\n2. Challenges Faced\n3. Root Causes\n4. Improvement Opportunities\n5. Action Items\n6. Ownership Matrix"
+  },
+  {
+    "id": 505,
+    "role": "Scrum Master",
+    "category": "Team Performance",
+    "subcategory": "Velocity Analysis",
+    "name": "Sprint Velocity Assessment",
+    "description": "Evaluate sprint velocity trends and recommend improvements for predictable delivery.",
+    "tags": ["velocity", "performance", "sprint"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nAssess sprint velocity and delivery performance.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Velocity Analysis\n2. Capacity Utilization\n3. Delivery Trends\n4. Bottlenecks\n5. Recommendations\n6. Improvement Plan"
+  },
+  {
+    "id": 506,
+    "role": "Scrum Master",
+    "category": "Sprint Planning",
+    "subcategory": "Release Planning",
+    "name": "Agile Release Planning",
+    "description": "Create an agile release plan aligned with roadmap objectives and team capacity.",
+    "tags": ["release", "planning", "agile"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nCreate an agile release plan for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Release Objectives\n2. Planned Sprints\n3. Major Deliverables\n4. Dependencies\n5. Risks\n6. Release Timeline"
+  },
+  {
+    "id": 507,
+    "role": "Scrum Master",
+    "category": "Backlog Management",
+    "subcategory": "Prioritization",
+    "name": "Backlog Prioritization Workshop",
+    "description": "Prioritize backlog items based on business value, risk, and implementation effort.",
+    "tags": ["prioritization", "backlog", "value"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nPrioritize backlog items from the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Backlog Items\n2. Business Value\n3. Risk Assessment\n4. Effort Estimation\n5. Priority Ranking\n6. Recommendations"
+  },
+  {
+    "id": 508,
+    "role": "Scrum Master",
+    "category": "Agile Coaching",
+    "subcategory": "Team Collaboration",
+    "name": "Team Collaboration Assessment",
+    "description": "Evaluate team collaboration, communication effectiveness, and agile team dynamics.",
+    "tags": ["team", "collaboration", "agile"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nAssess team collaboration effectiveness.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Collaboration Assessment\n2. Communication Analysis\n3. Team Challenges\n4. Improvement Opportunities\n5. Coaching Recommendations\n6. Action Plan"
+  },
+  {
+    "id": 509,
+    "role": "Scrum Master",
+    "category": "Retrospectives",
+    "subcategory": "Root Cause Analysis",
+    "name": "Delivery Impediment Analysis",
+    "description": "Identify delivery impediments and recommend corrective actions to improve sprint outcomes.",
+    "tags": ["impediments", "delivery", "analysis"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nAnalyze delivery impediments affecting the team.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Impediment List\n2. Root Cause Analysis\n3. Impact Assessment\n4. Mitigation Actions\n5. Ownership Assignment\n6. Recommendations"
+  },
+  {
+    "id": 510,
+    "role": "Scrum Master",
+    "category": "Team Performance",
+    "subcategory": "Metrics and Reporting",
+    "name": "Agile Performance Dashboard",
+    "description": "Define agile metrics, KPIs, and reporting dashboards to measure delivery effectiveness.",
+    "tags": ["metrics", "dashboard", "performance"],
+    "template": "# Role / Persona\n\nAct as a Scrum Master.\n\n# Instruction / Task\n\nDesign an agile performance measurement framework.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Key Metrics\n2. KPI Definitions\n3. Dashboard Layout\n4. Reporting Frequency\n5. Success Indicators\n6. Recommendations"
+  },
+   {
+    "id": 551,
+    "role": "AI Consultant",
+    "category": "AI Strategy",
+    "subcategory": "Business Transformation",
+    "name": "AI Strategy Assessment",
+    "description": "Evaluate business opportunities for AI adoption and define an enterprise AI strategy.",
+    "tags": ["ai", "strategy", "transformation"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nAssess the provided requirement and develop an AI strategy.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Executive Summary\n2. AI Opportunities\n3. Business Value Assessment\n4. AI Use Cases\n5. Risks and Challenges\n6. Strategic Recommendations"
+  },
+  {
+    "id": 552,
+    "role": "AI Consultant",
+    "category": "Prompt Engineering",
+    "subcategory": "Prompt Design",
+    "name": "Enterprise Prompt Design",
+    "description": "Design enterprise-grade prompts optimized for consistency, accuracy, and business outcomes.",
+    "tags": ["prompt", "llm", "engineering"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nDesign enterprise-grade prompts for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Prompt Objectives\n2. Prompt Structure\n3. Context Design\n4. Output Constraints\n5. Optimization Recommendations\n6. Example Prompts"
+  },
+  {
+    "id": 553,
+    "role": "AI Consultant",
+    "category": "AI Agents",
+    "subcategory": "Agent Design",
+    "name": "AI Agent Architecture",
+    "description": "Design autonomous AI agents including responsibilities, workflows, tools, and governance.",
+    "tags": ["agents", "automation", "ai"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nDesign an AI agent solution for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Agent Objectives\n2. Agent Responsibilities\n3. Workflow Design\n4. Tool Integrations\n5. Governance Controls\n6. Recommendations"
+  },
+  {
+    "id": 554,
+    "role": "AI Consultant",
+    "category": "RAG",
+    "subcategory": "Knowledge Retrieval",
+    "name": "RAG Solution Design",
+    "description": "Design a Retrieval-Augmented Generation architecture for enterprise knowledge systems.",
+    "tags": ["rag", "knowledge", "retrieval"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nDesign a RAG solution architecture.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Architecture Overview\n2. Knowledge Sources\n3. Retrieval Strategy\n4. Embedding Strategy\n5. Security Considerations\n6. Recommendations"
+  },
+  {
+    "id": 555,
+    "role": "AI Consultant",
+    "category": "AI Governance",
+    "subcategory": "Risk Management",
+    "name": "AI Governance Framework",
+    "description": "Define governance, compliance, security, and ethical controls for AI initiatives.",
+    "tags": ["governance", "compliance", "ethics"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nDevelop an AI governance framework.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Governance Principles\n2. Risk Controls\n3. Compliance Requirements\n4. Security Controls\n5. Ethical Considerations\n6. Recommendations"
+  },
+  {
+    "id": 556,
+    "role": "AI Consultant",
+    "category": "AI Strategy",
+    "subcategory": "Use Case Discovery",
+    "name": "AI Use Case Identification",
+    "description": "Identify high-value AI use cases aligned with business goals and operational challenges.",
+    "tags": ["usecases", "ai", "innovation"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nIdentify AI opportunities within the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Candidate Use Cases\n2. Business Impact\n3. Implementation Complexity\n4. Priority Ranking\n5. Expected Benefits\n6. Recommendations"
+  },
+  {
+    "id": 557,
+    "role": "AI Consultant",
+    "category": "AI Agents",
+    "subcategory": "Workflow Automation",
+    "name": "AI Workflow Automation Design",
+    "description": "Design AI-powered workflow automation solutions for business process optimization.",
+    "tags": ["automation", "workflow", "agents"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nDesign AI workflow automation for the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Process Analysis\n2. Automation Opportunities\n3. AI Components\n4. Workflow Design\n5. Success Metrics\n6. Recommendations"
+  },
+  {
+    "id": 558,
+    "role": "AI Consultant",
+    "category": "Prompt Engineering",
+    "subcategory": "Prompt Optimization",
+    "name": "Prompt Optimization Review",
+    "description": "Analyze and optimize prompts for improved accuracy, reliability, and response quality.",
+    "tags": ["prompt", "optimization", "llm"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nReview and optimize prompts related to the provided requirement.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Current Prompt Assessment\n2. Identified Issues\n3. Optimization Opportunities\n4. Improved Prompt Design\n5. Validation Approach\n6. Recommendations"
+  },
+  {
+    "id": 559,
+    "role": "AI Consultant",
+    "category": "RAG",
+    "subcategory": "Knowledge Management",
+    "name": "Enterprise Knowledge Assistant Design",
+    "description": "Design an AI-powered knowledge assistant using enterprise content and retrieval systems.",
+    "tags": ["assistant", "rag", "knowledge"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nDesign an enterprise knowledge assistant solution.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Assistant Objectives\n2. Knowledge Sources\n3. User Interactions\n4. Retrieval Workflow\n5. Security Model\n6. Recommendations"
+  },
+  {
+    "id": 560,
+    "role": "AI Consultant",
+    "category": "AI Governance",
+    "subcategory": "Responsible AI",
+    "name": "Responsible AI Assessment",
+    "description": "Evaluate AI solutions for fairness, transparency, accountability, and regulatory compliance.",
+    "tags": ["responsibleai", "ethics", "compliance"],
+    "template": "# Role / Persona\n\nAct as an AI Consultant.\n\n# Instruction / Task\n\nAssess the provided AI initiative using responsible AI principles.\n\n# Context / Data\n\n{{REQUIREMENT}}\n\n# Constraints / Output Format\n\nProvide:\n1. Fairness Assessment\n2. Transparency Review\n3. Accountability Framework\n4. Compliance Considerations\n5. Risk Analysis\n6. Recommendations"
   }
 ]
